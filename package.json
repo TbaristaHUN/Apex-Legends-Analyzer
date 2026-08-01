@@ -2,9 +2,10 @@
   "type": "commonjs",
   "name": "apex-legends",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "check": "node --check server.js && node --check config/database.js && node --check routes/apexRoutes.js && node --check routes/infoRoutes.js && node --check routes/weaponRoutes.js && node --check services/featuredWeapon.js && node --check services/metaScore.js && node --check services/weaponService.js && node --check js/config.js && node --check js/homepage.js && node --check js/dashboard.js && node --check js/tierlist.js"
   },
   "repository": {
     "type": "git",

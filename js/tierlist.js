@@ -1,8 +1,4 @@
-const BASE_URL =
-    window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1"
-        ? "http://localhost:3000"
-        : "https://apex-legends-analyzer-1.onrender.com";
+const BASE_URL = window.ApexAnalyzer.baseUrl;
 
 const TIER_ORDER = ["S", "A", "B", "C"];
 
