@@ -1,0 +1,46 @@
+/* Responsive rules shared by the page stylesheets. */
+
+@media (max-width: 900px) {
+    .tier-section {
+        grid-template-columns: 1fr;
+    }
+
+    .tier-label {
+        padding-right: 0;
+        padding-bottom: 18px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+}
+
+@media (max-width: 600px) {
+    .tier-list-page {
+        width: 92%;
+        padding-top: 35px;
+    }
+
+    .tier-section {
+        padding: 16px;
+    }
+
+    .tier-letter {
+        flex-basis: 58px;
+        width: 58px;
+        height: 58px;
+        font-size: 1.7rem;
+    }
+
+    .tier-weapons {
+        grid-template-columns: 1fr;
+    }
+
+    .tier-weapon-rating {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tier-weapon-stats {
+        flex-direction: column;
+    }
+}
+

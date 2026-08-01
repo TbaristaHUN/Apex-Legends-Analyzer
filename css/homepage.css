@@ -1,0 +1,454 @@
+/* Homepage-only styles for index.html. */
+
+
+#main {
+    padding: 20px 40px;
+    padding-top: 110px;
+    align-items: flex-start;
+    justify-content: center;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../Images/my-interpretation-of-pathfinder-from-apex-legends-v0-blzmt61oxqp61.png.webp);
+    height: 900px;
+}
+
+live-hub-container {
+    display: flex 
+    flex-direction: row
+    justify-content: center 
+    align-items: flex-start
+    gap: 30px 
+    max-width: 950px 
+    margin: 40px auto 
+    position: relative;
+    z-index: 10;
+}
+
+.live-hub-container .card {
+    flex: 1 
+    width: 420px 
+    min-height: 320px 
+    background: rgba(18, 18, 22, 0.88) 
+    border: 1px solid rgba(218, 41, 28, 0.4) 
+    border-radius: 12px
+    padding: 24px 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) 
+    backdrop-filter: blur(8px);
+    position: relative 
+    transform: none 
+}
+
+.live-hub-container .card:hover {
+    border-color: #da291c 
+    box-shadow: 0 0 20px rgba(218, 41, 28, 0.25)
+}
+
+.countdown-card {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(218, 41, 28, 0.4);
+    color: #fff;
+    font-family: 'Orbitron';
+}
+
+.map-card {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 188, 13, 0.4);
+    color: #fff;
+    font-family: 'Orbitron';
+}
+
+.card-title-red {
+    color: #da291c;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 5px;
+}
+
+.card-title-yellow {
+    color: #ffbc0d;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 5px;
+}
+
+.card-subtitle {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.timer-number-yellow {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffbc0d;
+}
+
+.timer-number-red {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #da291c;
+}
+
+.timer-label {
+    display: block;
+    font-size: 0.65rem;
+    opacity: 0.6;
+}
+
+.map-info-box {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.live-info-banner {
+    background: rgba(15, 15, 18, 0.95);
+    border-bottom: 1px solid rgba(218, 41, 28, 0.5);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.78rem;
+    color: #e1e1e6;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    flex-wrap: wrap;
+}
+
+.banner-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.banner-divider {
+    color: #3a3a45;
+    font-weight: bold;
+}
+
+.banner-label {
+    color: #88888e;
+}
+
+.banner-tag {
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.red-tag {
+    background-color: #da291c;
+    color: #ffffff;
+}
+
+.yellow-tag {
+    background-color: #ffbc0d;
+    color: #111111;
+}
+
+.live-info-banner a {
+    color: #00ffcc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.live-info-banner a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-green {
+    background-color: #00ffcc;
+    box-shadow: 0 0 8px #00ffcc;
+}
+
+.dot-red {
+    background-color: #ff4d4d;
+    box-shadow: 0 0 8px #ff4d4d;
+}
+
+.dot-gray {
+    background-color: #88888e;
+    box-shadow: 0 0 8px rgba(136, 136, 142, 0.7);
+}
+
+.banner-link {
+    text-decoration: none;
+    color: #e1e1e6;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.banner-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+.banner-link:hover #latest-news-text,
+.banner-link:hover #algs-event-text {
+    color: #00ffcc;
+    text-decoration: underline;
+}
+
+#main {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.live-hub-container {
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+    gap:28px;
+    width:95%;
+    max-width:1650px;
+    margin:40px auto;
+    flex-wrap:wrap;
+}
+
+
+.live-hub-container {
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+    gap:28px;
+    width:95%;
+    max-width:1650px;
+    margin:40px auto;
+    flex-wrap:wrap;
+}
+
+.featured-weapon-card {
+    flex: 1 1 0;
+    min-width: 320px;
+    max-width: 420px;
+    background: rgba(18,18,22,.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(218,41,28,.45);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.55);
+    text-align:center;
+}
+
+.featured-weapon-card h2 {
+
+    font-family:'Orbitron';
+    color:white;
+    font-size:2rem;
+    letter-spacing:1px;
+    margin-bottom:6px;
+}
+
+#featured-weapon-content {
+    width: 100%;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+.featured-weapon-name {
+    margin-top: 18px;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.featured-weapon-class {
+    margin-top: 7px;
+    color: #9b9ba2;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.meta-section {
+    margin: 22px 0;
+    padding: 16px 12px;
+    background: rgba(0, 0, 0, 0.32);
+    border: 1px solid rgba(255, 188, 13, 0.22);
+    border-radius: 8px;
+}
+
+.meta-stars {
+    color: #ffbc0d;
+    font-size: 1.35rem;
+    letter-spacing: 4px;
+    line-height: 1;
+}
+
+.meta-score-label {
+    margin-top: 12px;
+    color: #9999a0;
+    font-size: 0.66rem;
+    letter-spacing: 2px;
+}
+
+.meta-score-value {
+    margin-top: 5px;
+    color: #ffffff;
+    font-size: 1.55rem;
+    font-weight: 700;
+}
+
+.meta-tier {
+    display: inline-block;
+    margin-top: 11px;
+    padding: 5px 13px;
+    color: #ffffff;
+    background: #da291c;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.featured-stats {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.weapon-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-sizing: border-box;
+}
+
+.weapon-stat span {
+    color: #9999a0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 1.2px;
+}
+
+.weapon-value {
+    color: #ffbc0d;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+}
+
+.featured-weapon-error {
+    margin-top: 25px;
+    color: #da291c;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+}
+
+#featured-weapon-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    width:100%;
+}
+
+.featured-title{
+    font-family:'Orbitron',sans-serif;
+    font-size:2rem;
+    font-weight:700;
+    color:white;
+    letter-spacing:2px;
+    text-align:center;
+}
+
+.featured-subtitle{
+    font-family:'Orbitron',sans-serif;
+    font-size:.72rem;
+    color:#777;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.featured-name{
+    font-family:'Orbitron',sans-serif;
+    font-size:2rem;
+    color:white;
+    font-weight:700;
+    margin-top:8px;
+}
+
+.featured-class{
+    color:#ffbc0d;
+    font-size:.95rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.featured-stars{
+    color:#ffbc0d;
+    font-size:1.4rem;
+    letter-spacing:4px;
+}
+
+.featured-tier{
+    color:#da291c;
+    font-family:'Orbitron',sans-serif;
+    font-size:1rem;
+    font-weight:bold;
+}
+
+.featured-divider{
+    width:80%;
+    height:1px;
+    background:rgba(255,255,255,.15);
+    margin:10px 0;
+}
+
+.featured-stat{
+    width:82%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:6px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.featured-stat span{
+    color:#888;
+    font-size:.78rem;
+    letter-spacing:1px;
+    font-family:'Orbitron',sans-serif;
+}
+
+.featured-stat strong{
+    color:white;
+    font-size:1rem;
+    font-family:'Orbitron',sans-serif;
+}

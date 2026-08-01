@@ -1,0 +1,434 @@
+/* Dashboard-only styles for analyze.html. */
+
+
+#player_tracker-section {
+    background-image: url(../Images/Supply\ bin.jpg);
+    padding: 20px 40px;
+    padding-top: 110px;
+    align-items: flex-start;
+    justify-content: center;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    list-style: none;
+}
+
+
+
+#dashboard:hover {
+    color: rgb(7, 218, 7);
+}
+
+#player-tracker-section {
+    background-image: url("../Images/Supply bin.jpg");
+    padding: 20px 40px;
+    padding-top: 110px;
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+
+}
+
+#playerNameInput {
+    background-color: #0f0f12;
+    color: #ffffff;
+    border: 1px solid #3a3a45;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Orbitron', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#playerStatsDisplay {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#playerStatsDisplay p {
+    color: #ffffff;
+    margin: 8px 0;
+}
+
+#playerStatsDisplay span {
+    color: #ffffff;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    gap: 30px;                
+    margin: 50px auto 0 auto; 
+    max-width: 1200px;
+}
+
+.supplybin-button {
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: #88888e;
+    color: #f5f5f7;
+    margin-top: auto;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+.supplybin-button:hover {
+    background-color: #d61f1f;
+    transform: scale(1.03);
+}
+
+#calculator-result p {
+    color: #cccccc;
+    font-size: 0.95 rem;
+    margin-top: 10px;
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-bottom: 15px; 
+}
+
+.input-group label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    color: #ffffff; /
+    text-transform: uppercase;
+    margin-bottom: 8px;  
+    letter-spacing: 1px;
+}
+
+.input-group select {
+    background-color: #0f0f12;
+    color: #fff;
+    border: 1px solid #3a3a45;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 0.95rem;
+    width: 100%;          
+    max-width: 260px; 
+    text-align: center;   
+    text-align-last: center; 
+}
+
+.analysis-panel {
+    border-top: 2px solid #ff4d4d;
+    margin-top: 20px;
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.analysis-title {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.analysis-subtitle {
+    font-size: 0.75rem;
+    color: #666666;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.stats-grid {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.stat-box {
+    background-color: #0f0f12;
+    border: 1px solid #2d2d35;
+    border-radius: 4px;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    color: #888888;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.dps-color { 
+    color: #ff4d4d; 
+}
+
+.mag-color { 
+    color: #00ffcc; 
+}
+
+.details-box {
+    width: 100%;
+    max-width: 250px;
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #aaaaaa;
+}
+
+.details-box p {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 0;
+}
+
+.details-box strong {
+    color: #ffffff;
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+// Weapon comparison box //
+.compare-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.compare-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.compare-weapon-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    color: #fff;
+    font-weight: bold;
+    min-height: 35px; 
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.compare-stat-box {
+    background-color: #25252d;
+    border: 1px solid #3a3a45;
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.compare-stat-box small {
+    font-size: 0.65rem;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.vs-divider {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: #ff4d4d;
+    font-size: 1rem;
+    padding: 0 5px;
+    margin-top: 25px;
+}
+
+.winner-stat {
+    border-color: #00ffcc;
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.2);
+}
+.winner-stat strong {
+    color: #00ffcc;
+}
+
+#comparison-result p {
+    font-family: 'Orbitron', sans-serif;
+    color: #cccccc;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.compare-stat-box strong {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.compare-stat-box small {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 0.65rem;
+    color: #aaaaaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+
+.flex-container .card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 360px;
+}
+
+.player-stats-box {
+    display: none;
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 12px;
+}
+
+.player-name-title {
+    color: #da291c;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.stat-text {
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+.highlight-yellow {
+    font-weight: bold;
+    color: #ffbc0d;
+}
+
+.highlight-bold {
+    font-weight: bold;
+}
+
+.icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.stats-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.legend-icon {
+    display: none; 
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px;
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.compare-stat-box {
+    background-color: #16161a !important;
+    border: 1px solid #2d2d35 !important;
+    border-radius: 6px !important;
+    padding: 10px !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 8px !important;
+}
+
+.compare-stat-box strong {
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 1.3rem !important;
+    color: #e1e1e6 !important;
+    font-weight: 700 !important;
+}
+
+.compare-stat-box small {
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 0.7rem !important;
+    color: #88888e !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+}
+
+.winner-stat {
+    border-color: #00ffcc !important;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.25) !important;
+}
+.winner-stat strong {
+    color: #00ffcc !important;
+}
+
+.loser-stat {
+    border-color: #ff4d4d !important;
+}
+.loser-stat strong {
+    color: #ff4d4d !important;
+}
+
+.warning-message {
+    font-family: 'Orbitron', sans-serif !important;
+    color: #ffbc0d !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    margin-top: 15px !important;
+    padding: 10px 15px !important;
+    border: 1px solid #ffbc0d !important;
+    border-radius: 4px !important;
+    background: rgba(255, 188, 13, 0.08) !important;
+    box-shadow: 0 0 10px rgba(255, 188, 13, 0.15) !important;
+}

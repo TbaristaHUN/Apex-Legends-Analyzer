@@ -1,0 +1,186 @@
+/* Shared site styles: base, header, navigation, footer and reusable cards. */
+
+
+body {
+    background-color: #1a1a1f;
+    font-family: 'Orbitron' sans-serif;
+}
+
+#logo {
+    color: #f5f5f7;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    padding: 10px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgb(227, 255, 253);
+}
+
+#main-title {
+    color: #88888e;  
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;   
+    display: flex;
+    margin: 0 10px 10px 10px; 
+}
+
+#main-header {
+    background-color: #16161a;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f5f5f7;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+header a {
+    color: #f5f5f7;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Orbitron';
+    font-weight: bold;
+    padding: 12px;
+    text-shadow: 1px 1px 2px rgb(white);
+}
+
+header ul {
+    list-style: none;
+}
+
+.dash-btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.dash-btn:hover {
+    background-color: #ff2a2a;
+    color: #f5f5f7;
+}
+
+#footer {
+    background-color: #1a1a1f;
+    padding: 30px 0; 
+    border-top: 1px solid #232329; 
+    margin-top: 40px;
+}
+
+#footer-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 40px;
+}
+
+#footer-link a {
+    color: #88888e;
+    text-decoration: none;
+    font-family: 'Orbitron';
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-bottom {
+     color: #88888e;
+    text-decoration: none;
+    font-family: 'Orbitron';
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+#footer-links a:hover {
+    color: #ff2a2a;
+}
+
+footer ul {
+    list-style: none;
+}
+
+#copyright {
+    font-family: 'Orbitron';
+    text-align: center;
+    padding: 25px;
+    color: #88888e;
+}
+
+.card {
+    background: rgba(26, 26, 30, 0.9); 
+    border: 1px solid #a84e09;
+    border-radius: 8px;
+    padding: 30px;
+    width: 350px; 
+    min-height: 480px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    min-width: 300px;
+
+}
+
+.card:hover {
+    transform: scale(1.5);
+}
+
+.card h3 {
+    color: #f5f5f7; 
+    font-family: 'Orbitron';
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.card {
+    flex: 1;
+    min-width: 320px;
+    max-width: 380px;
+    background: rgba(18, 18, 20, 0.9);
+    border: 1px solid #d35400;
+    border-radius: 8px;
+    padding: 25px 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.player-tracker {
+    flex: 1.1; 
+    align-self: stretch;
+}
+
+.card:hover {
+    border-color: #ff4d4d;
+    box-shadow: 0 10px 40px rgba(255, 77, 77, 0.2);
+}
+
