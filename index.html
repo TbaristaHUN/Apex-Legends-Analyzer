@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex // Analyzer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Fira+Sans:wght@100..900&family=Orbitron:wght@400..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header id="main-header">
+
+    <div id="header-content">
+        <a href="index.html" id="logo">Apex//Analyzer</a>
+        <h2 id="main-title">Dominate the Apex Games with data</h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="analyze.html" class="dash-btn">
+                    Enter Dashboard
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+
+
+<div class="live-info-banner">
+
+    <a href="https://apexlegendsstatus.com"
+       target="_blank"
+       class="banner-item banner-link">
+
+        <span id="server-dot"
+              class="status-indicator dot-green"></span>
+
+        <span class="banner-label">
+            EU SERVER:
+        </span>
+
+        <strong id="server-status-text">
+            ONLINE
+        </strong>
+
+    </a>
+
+    <div class="banner-divider">|</div>
+
+    <a href="https://algs.ea.com/en"
+       id="algs-event-link"
+       target="_blank"
+       class="banner-item banner-link">
+
+        <span class="banner-tag red-tag">
+            ALGS
+        </span>
+
+        <span id="algs-event-text">
+            ALGS Official Competitive Schedule
+        </span>
+
+    </a>
+
+    <div class="banner-divider">|</div>
+
+    <a href="https://www.ea.com/games/apex-legends/news"
+       id="latest-news-link"
+       target="_blank"
+       class="banner-item banner-link">
+
+        <span class="banner-tag yellow-tag">
+            PATCH
+        </span>
+
+        <span id="latest-news-text">
+            Latest Apex News & Patch Notes
+        </span>
+
+    </a>
+
+</div>
+
+
+
+<div id="main">
+
+<div class="live-hub-container">
+
+    <div class="card countdown-card">
+
+        <div id="countdown-display">
+
+            <h3 class="card-title-red">
+                SEASON 30 // LAUNCH
+            </h3>
+
+            <p class="card-subtitle">
+                TIME REMAINING UNTIL NEXT LAUNCH
+            </p>
+
+            <div class="countdown-grid">
+
+                <div>
+                    <span id="cd-days" class="timer-number-red">00</span>
+                    <span class="timer-label">DAYS</span>
+                </div>
+
+                <div>
+                    <span id="cd-hours" class="timer-number-red">00</span>
+                    <span class="timer-label">HOURS</span>
+                </div>
+
+                <div>
+                    <span id="cd-mins" class="timer-number-red">00</span>
+                    <span class="timer-label">MINS</span>
+                </div>
+
+                <div>
+                    <span id="cd-secs" class="timer-number-red">00</span>
+                    <span class="timer-label">SECS</span>
+                </div>
+
+            </div>
+
+            <div style="margin-top:15px;
+                        background:rgba(0,0,0,.4);
+                        padding:12px;
+                        border-radius:8px;
+                        border:1px solid rgba(255,188,13,.2);
+                        text-align:center;">
+
+                <small style="color:#ffbc0d;
+                              font-family:Orbitron;
+                              display:block;
+                              margin-bottom:6px;">
+
+                    💡 ANALYZER PRO TIP
+
+                </small>
+
+                <div id="apex-pro-tip">
+
+                    Loading tip...
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card map-card">
+
+        <h3 class="card-title-yellow">
+            LIVE MAP ROTATION
+        </h3>
+
+        <p class="card-subtitle">
+            CURRENT BATTLE ROYALE MAP
+        </p>
+
+        <div id="map-info"
+             class="map-info-box">
+
+            Loading map...
+
+        </div>
+
+    </div>
+
+    <div class="card featured-weapon-card">
+
+        <h3 class="card-title-red">
+            FEATURED WEAPON
+        </h3>
+
+        <p class="card-subtitle">
+            TODAY'S META PICK
+        </p>
+
+        <div id="featured-weapon-content">
+
+            Loading featured weapon...
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+
+<footer id="footer">
+
+    <ul id="footer-link">
+
+        <li>
+            <a href="analyze.html">
+                LIVE PLAYER TRACKING
+            </a>
+        </li>
+
+        <li>
+            <a href="analyze.html">
+                REAL-TIME DPS CALCULATOR
+            </a>
+        </li>
+
+        <li>
+            <a href="analyze.html">
+                INTERACTIVE WEAPON DATABASE
+            </a>
+        </li>
+
+    </ul>
+
+    <p id="copyright">
+
+        COPYRIGHT © 2026 APEX//ANALYZER
+        ALL RIGHTS RESERVED.
+        DEVELOPED BY TIBOR JENEI
+
+    </p>
+
+</footer>
+
+
+<script src="index.js"></script>
+
+</body>
+</html>
