@@ -214,9 +214,12 @@ app.get("/api/weapons/:id", async (req, res) => {
 app.get("/api/featured-weapon", async (req, res) => {
     try {
         const weapon = await getFeaturedWeapon(
-            pool,
-            calculateMetaScore
-        );
+    pool,
+    calculateMetaScore
+);
+
+console.log("FEATURED RESPONSE:");
+console.dir(weapon, { depth: null });
 
         if (!weapon) {
             return res.status(404).json({

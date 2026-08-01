@@ -980,3 +980,88 @@ live-hub-container {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.8rem;
 }
+
+#featured-weapon-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    width:100%;
+}
+
+.featured-title{
+    font-family:'Orbitron',sans-serif;
+    font-size:2rem;
+    font-weight:700;
+    color:white;
+    letter-spacing:2px;
+    text-align:center;
+}
+
+.featured-subtitle{
+    font-family:'Orbitron',sans-serif;
+    font-size:.72rem;
+    color:#777;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.featured-name{
+    font-family:'Orbitron',sans-serif;
+    font-size:2rem;
+    color:white;
+    font-weight:700;
+    margin-top:8px;
+}
+
+.featured-class{
+    color:#ffbc0d;
+    font-size:.95rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.featured-stars{
+    color:#ffbc0d;
+    font-size:1.4rem;
+    letter-spacing:4px;
+}
+
+.featured-tier{
+    color:#da291c;
+    font-family:'Orbitron',sans-serif;
+    font-size:1rem;
+    font-weight:bold;
+}
+
+.featured-divider{
+    width:80%;
+    height:1px;
+    background:rgba(255,255,255,.15);
+    margin:10px 0;
+}
+
+.featured-stat{
+    width:82%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:6px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.featured-stat span{
+    color:#888;
+    font-size:.78rem;
+    letter-spacing:1px;
+    font-family:'Orbitron',sans-serif;
+}
+
+.featured-stat strong{
+    color:white;
+    font-size:1rem;
+    font-family:'Orbitron',sans-serif;
+}
+

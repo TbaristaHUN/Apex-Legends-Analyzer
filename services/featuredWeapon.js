@@ -20,23 +20,17 @@ async function getFeaturedWeapon(pool, calculateMetaScore) {
 
     const weapon = weapons[dayNumber % weapons.length];
 
-    const meta = calculateMetaScore(weapon);
+    const metaScore = calculateMetaScore(weapon);
 
     return {
-
         id: weapon.id,
         name: weapon.name,
         class: weapon.class,
         rpm: weapon.rpm,
         damage: weapon.damage,
         mag_sizes: weapon.mag_sizes,
-
-        metaScore: meta.score,
-        tier: meta.tier,
-        stars: meta.stars
-
+        metaScore
     };
-
 }
 
 module.exports = getFeaturedWeapon;

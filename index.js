@@ -276,49 +276,52 @@ async function loadFeaturedWeapon() {
         const dps = Math.round((bodyDamage * rpm) / 60);
 
         container.innerHTML = `
-            <div class="featured-weapon-name">
-                ${weapon.name}
-            </div>
+    <div class="featured-title">
+        FEATURED WEAPON
+    </div>
 
-            <div class="featured-weapon-class">
-                ${weapon.class}
-            </div>
+    <div class="featured-subtitle">
+        TODAY'S META PICK
+    </div>
 
-            <div class="meta-section">
-                <div class="meta-stars">
-                    ${weapon.stars || "☆☆☆☆☆"}
-                </div>
+    <div class="featured-name">
+        ${weapon.name}
+    </div>
 
-                <div class="meta-score-label">
-                    META SCORE
-                </div>
+    <div class="featured-class">
+        ${weapon.class}
+    </div>
 
-                <div class="meta-score-value">
-                    ${weapon.metaScore ?? "N/A"} / 10
-                </div>
+    <div class="featured-stars">
+        ${weapon.metaScore.stars}
+    </div>
 
-                <div class="meta-tier">
-                    ${weapon.tier || "N/A"} TIER
-                </div>
-            </div>
+    <div class="featured-tier">
+        ${weapon.metaScore.tier} TIER
+    </div>
 
-            <div class="featured-stats">
-                <div class="weapon-stat">
-                    <span>DPS</span>
-                    <strong class="weapon-value">${dps}</strong>
-                </div>
+    <div class="featured-divider"></div>
 
-                <div class="weapon-stat">
-                    <span>BODY DAMAGE</span>
-                    <strong class="weapon-value">${bodyDamage}</strong>
-                </div>
+    <div class="featured-stat">
+        <span>DPS</span>
+        <strong>${dps}</strong>
+    </div>
 
-                <div class="weapon-stat">
-                    <span>RPM</span>
-                    <strong class="weapon-value">${rpm}</strong>
-                </div>
-            </div>
-        `;
+    <div class="featured-stat">
+        <span>BODY DAMAGE</span>
+        <strong>${bodyDamage}</strong>
+    </div>
+
+    <div class="featured-stat">
+        <span>RPM</span>
+        <strong>${weapon.rpm}</strong>
+    </div>
+
+    <div class="featured-stat">
+        <span>META SCORE</span>
+        <strong>${weapon.metaScore.score}/10</strong>
+    </div>
+`;
 
     } catch (error) {
         console.error("Featured weapon error:", error);
