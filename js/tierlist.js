@@ -83,7 +83,7 @@ function renderTierSection(tier, weapons) {
                         ? weapons.map(renderWeaponCard).join("")
                         : `
                             <p class="empty-tier">
-                                No weapons in this tier.
+                            No weapons currently meet the requirements for this tier.
                             </p>
                         `
                 }
