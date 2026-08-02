@@ -1,0 +1,1 @@
+console.log("Weqpon database module loaded successfully.");

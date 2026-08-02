@@ -269,3 +269,99 @@
     color: rgba(116, 116, 124, 0.8);
     border-color: rgba(116, 116, 124, 0.2);
 }
+
+.tier-methodology {
+    margin-top: 52px;
+    padding: 28px;
+    background: rgba(18, 18, 22, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 4px solid var(--color-cyan, #00f0ff);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.34);
+}
+
+.tier-methodology-header {
+    margin-bottom: 22px;
+}
+
+.tier-methodology-header p {
+    margin: 0 0 7px;
+    color: var(--color-red, #da291c);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+}
+
+.tier-methodology-header h2 {
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+}
+
+.tier-methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    grid-template-columns: 1fr;
+}
+
+.tier-methodology-card {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.24);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+}
+
+.tier-methodology-card h3 {
+    margin: 0 0 12px;
+    color: var(--color-yellow, #ffbc0d);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.76rem;
+    letter-spacing: 1.4px;
+}
+
+.tier-methodology-card p {
+    margin: 0;
+    color: #9b9ba3;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.86rem;
+    line-height: 1.7;
+}
+
+.tier-methodology-card ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tier-methodology-card li {
+    padding: 7px 0;
+    color: #9b9ba3;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+    font-size: 0.82rem;
+}
+
+.tier-methodology-card li:last-child {
+    border-bottom: none;
+}
+
+.tier-methodology-card strong {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+}
+
+.tier-methodology-notice {
+    margin-top: 18px;
+    padding: 14px;
+    color: #7f7f87;
+    background: rgba(255, 188, 13, 0.035);
+    border: 1px solid rgba(255, 188, 13, 0.13);
+    border-radius: 8px;
+    font-size: 0.76rem;
+    line-height: 1.55;
+}
+

@@ -1,0 +1,18 @@
+:root {
+
+    --bg-primary: #1a1a1f;
+    --bg-secondary: #141418;
+    --bg-card: rgba(18, 18, 22, 0.82);
+    --color-red: #da291c;
+    --color-yellow: #ffbc0d;
+    --color-cyan: #00f0ff;
+    --text-primary: #f5f5f5;
+    --text-secondary: #9b9ba3;
+    --text-muted: #707078;
+    --border-color: rgba(255,255,255,.08);
+    --radius-small: 10px;
+    --radius-medium: 16px;
+    --radius-large: 22px;
+    --shadow-card: 0 12px 35px rgba(0,0,0,.35);
+    --transition-fast: .2s ease;
+}

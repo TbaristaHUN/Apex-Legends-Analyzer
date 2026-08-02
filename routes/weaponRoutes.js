@@ -28,7 +28,7 @@ function createWeaponRouter({
     router.get("/weapons/top-meta", async (req, res) => {
         const requestedLimit = Number.parseInt(req.query.limit, 10);
         const limit = Number.isInteger(requestedLimit)
-            ? Math.min(Math.max(requestedLimit, 1), 25)
+            ? Math.min(Math.max(requestedLimit, 1), 50)
             : 10;
 
         try {
@@ -52,29 +52,52 @@ function createWeaponRouter({
     });
 
     router.get("/weapons/:id", async (req, res) => {
-        const weaponId = req.params.id;
+        console.log('New weapon details route running..."');
+    const weaponId = req.params.id;
 
-        try {
-            const weapon = await getWeaponById(pool, weaponId);
+    try {
+        const weapon = await weaponService.getWeaponById(
+            pool,
+            weaponId
+        );
 
-            if (!weapon) {
-                return res.status(404).json({
-                    error: "Weapon not found."
-                });
-            }
-
-            return res.json(weapon);
-        } catch (error) {
-            console.error(
-                `Failed to fetch weapon details for ID ${weaponId}:`,
-                error.message
-            );
-
-            return res.status(500).json({
-                error: "Failed to fetch weapon details."
+        if (!weapon) {
+            return res.status(404).json({
+                error: "Weapon not found."
             });
         }
-    });
+
+        const meta = calculateMetaScore(weapon);
+
+        const bodyDamage = Number(weapon.damage?.body) || 0;
+        const rpm = Number(weapon.rpm) || 0;
+        const dps = Math.round((bodyDamage * rpm) / 60);
+
+        return res.json({
+            id: weapon.id,
+            name: weapon.name,
+            class: weapon.class,
+            rpm,
+            dps,
+            damage: weapon.damage,
+            mag_sizes: weapon.mag_sizes,
+            metaScore: meta.score,
+            tier: meta.tier,
+            stars: meta.stars
+        });
+
+    } catch (error) {
+        console.error(
+            `Failed to fetch weapon details for ID ${weaponId}:`,
+            error.message
+        );
+
+        return res.status(500).json({
+            error: "Failed to fetch weapon details."
+        });
+    }
+});
+
 
     router.get("/featured-weapon", async (req, res) => {
         try {

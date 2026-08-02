@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weapon Database | Apex//Analyzer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/weapons.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <header id="main-header">
+        <div id="header-content">
+            <a href="index.html" id="logo">
+                Apex//Analyzer
+            </a>
+
+            <h2 id="main-title">
+                Weapon Analytics Database
+            </h2>
+        </div>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html" class="dash-btn">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="analyze.html" class="dash-btn">
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tierlist.html" class="dash-btn">
+                        Tier List
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="weapon-database-page">
+
+        <section class="weapon-database-header">
+            <p class="weapon-database-eyebrow">
+                APEX//ANALYZER DATABASE
+            </p>
+
+            <h1>
+                WEAPON DATABASE
+            </h1>
+
+            <p class="weapon-database-description">
+                Browse, search and filter the weapons stored in the
+                Apex//Analyzer PostgreSQL database.
+            </p>
+        </section>
+
+        <section
+            class="weapon-controls"
+            aria-label="Weapon database filters"
+        >
+            <div class="weapon-control-group weapon-search-group">
+                <label for="weapon-search">
+                    Search
+                </label>
+
+                <input
+                    type="search"
+                    id="weapon-search"
+                    placeholder="Search by weapon name..."
+                    autocomplete="off"
+                >
+            </div>
+
+            <div class="weapon-control-group">
+                <label for="weapon-class-filter">
+                    Weapon Class
+                </label>
+
+                <select id="weapon-class-filter">
+                    <option value="all">All Classes</option>
+                    <option value="Assault Rifle">Assault Rifle</option>
+                    <option value="SMG">SMG</option>
+                    <option value="LMG">LMG</option>
+                    <option value="Marksman">Marksman</option>
+                    <option value="Sniper">Sniper</option>
+                    <option value="Shotgun">Shotgun</option>
+                    <option value="Pistol">Pistol</option>
+                </select>
+            </div>
+
+            <div class="weapon-control-group">
+                <label for="weapon-sort">
+                    Sort By
+                </label>
+
+                <select id="weapon-sort">
+                    <option value="name-asc">Name: A–Z</option>
+                    <option value="name-desc">Name: Z–A</option>
+                    <option value="meta-desc">Meta Score: Highest</option>
+                    <option value="dps-desc">DPS: Highest</option>
+                    <option value="damage-desc">Body Damage: Highest</option>
+                    <option value="rpm-desc">RPM: Highest</option>
+                </select>
+            </div>
+
+            <button
+                type="button"
+                id="reset-weapon-filters"
+                class="supplybin-button weapon-reset-button"
+            >
+                Reset Filters
+            </button>
+        </section>
+
+        <section class="weapon-database-summary">
+            <p>
+                Showing
+                <strong id="visible-weapon-count">0</strong>
+                of
+                <strong id="total-weapon-count">0</strong>
+                weapons
+            </p>
+        </section>
+
+        <section
+            id="weapon-grid"
+            class="weapon-grid"
+            aria-live="polite"
+        >
+            <p class="weapon-database-loading">
+                Loading weapon database...
+            </p>
+        </section>
+
+        <section class="weapon-database-info">
+            <h2>
+                ABOUT THE WEAPON DATABASE
+            </h2>
+
+            <p>
+                Weapon statistics are loaded dynamically from the
+                Apex//Analyzer PostgreSQL database. Damage values,
+                fire rate and magazine capacity are used by the custom
+                scoring model to calculate statistical weapon ratings.
+            </p>
+
+            <p>
+                The current Meta Score is an experimental analytical
+                value and does not represent an official Electronic Arts
+                or Respawn Entertainment ranking.
+            </p>
+        </section>
+
+    </main>
+
+    <footer id="footer">
+
+        <div class="footer-content">
+
+            <p class="footer-title">
+                APEX//ANALYZER MODULES
+            </p>
+
+            <nav
+                class="footer-navigation"
+                aria-label="Footer navigation"
+            >
+                <a href="analyze.html#player-tracker">
+                    Player Tracker
+                </a>
+
+                <a href="analyze.html#weapon-comparison">
+                    Weapon Comparison
+                </a>
+
+                <a href="analyze.html#dps-calculator">
+                    DPS Calculator
+                </a>
+
+                <a href="tierlist.html">
+                    Weapon Tier List
+                </a>
+
+                <a href="weapons.html">
+                    Weapon Database
+                </a>
+            </nav>
+
+        </div>
+
+        <p id="copyright">
+            COPYRIGHT &copy; 2026 APEX//ANALYZER.
+            ALL RIGHTS RESERVED.
+            DEVELOPED BY TIBOR JENEI
+        </p>
+
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/weapons-database.js"></script>
+
+</body>
+</html>

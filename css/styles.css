@@ -1,9 +1,7 @@
-/* Shared site styles: base, header, navigation, footer and reusable cards. */
-
 
 body {
     background-color: #1a1a1f;
-    font-family: 'Orbitron' sans-serif;
+    font-family: 'Orbitron', sans-serif;
 }
 
 #logo {
@@ -73,55 +71,6 @@ header ul {
     color: #f5f5f7;
 }
 
-#footer {
-    background-color: #1a1a1f;
-    padding: 30px 0; 
-    border-top: 1px solid #232329; 
-    margin-top: 40px;
-}
-
-#footer-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    gap: 40px;
-}
-
-#footer-link a {
-    color: #88888e;
-    text-decoration: none;
-    font-family: 'Orbitron';
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-    font-size: 0.9rem;
-}
-
-.footer-bottom {
-     color: #88888e;
-    text-decoration: none;
-    font-family: 'Orbitron';
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-#footer-links a:hover {
-    color: #ff2a2a;
-}
-
-footer ul {
-    list-style: none;
-}
-
-#copyright {
-    font-family: 'Orbitron';
-    text-align: center;
-    padding: 25px;
-    color: #88888e;
-}
-
 .card {
     background: rgba(26, 26, 30, 0.9); 
     border: 1px solid #a84e09;
@@ -184,3 +133,66 @@ html {
     box-shadow: 0 10px 40px rgba(255, 77, 77, 0.2);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+#player-tracker,
+#weapon-comparison,
+#dps-calculator {
+    scroll-margin-top: 120px;
+}
+
+#footer {
+    background:#1a1a1f;
+    border-top:1px solid #232329;
+    padding:35px 20px;
+    margin-top:40px;
+}
+
+.footer-content{
+    max-width:1200px;
+    margin:auto;
+}
+
+.footer-title {
+    color:#da291c;
+    text-align:center;
+    font-family:'Orbitron',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:.8rem;
+    margin-bottom:25px;
+}
+
+.footer-navigation {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px 35px;
+    margin-bottom:25px;
+}
+
+.footer-navigation a {
+    color:#88888e;
+    text-decoration:none;
+    font-family:'Orbitron',sans-serif;
+    font-size:.82rem;
+    text-transform:uppercase;
+    transition:.25s;
+
+}
+
+.footer-navigation a:hover {
+    color:#ffbc0d;
+
+}
+
+#copyright {
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:25px;
+    color:#88888e;
+    font-family:'Orbitron',sans-serif;
+    text-align:center;
+    font-size:.75rem;
+}

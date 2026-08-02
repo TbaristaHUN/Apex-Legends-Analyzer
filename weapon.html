@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weapon Details | Apex//Analyzer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/weapon-details.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<header id="main-header">
+    <div id="header-content">
+        <a href="index.html" id="logo">
+            Apex//Analyzer
+        </a>
+
+        <h2 id="main-title">
+            Weapon Analysis
+        </h2>
+    </div>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li>
+                <a href="index.html" class="dash-btn">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="weapons.html" class="dash-btn">
+                    Weapon Database
+                </a>
+            </li>
+
+            <li>
+                <a href="tierlist.html" class="dash-btn">
+                    Tier List
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="weapon-details-page">
+
+    <section id="weapon-details-loading" class="weapon-details-message">
+        Loading weapon details...
+    </section>
+
+    <section id="weapon-details-error" class="weapon-details-message error-message" hidden>
+        Weapon details are currently unavailable.
+    </section>
+
+    <article id="weapon-details-content" class="weapon-details-content" hidden>
+
+        <div class="weapon-details-hero">
+
+            <div class="weapon-details-heading">
+                <p class="weapon-details-eyebrow">
+                    APEX//ANALYZER DATABASE
+                </p>
+
+                <h1 id="weapon-detail-name">
+                    Weapon
+                </h1>
+
+                <p id="weapon-detail-class" class="weapon-detail-class">
+                    Weapon Class
+                </p>
+            </div>
+
+            <div class="weapon-detail-rating">
+
+                <span
+                    id="weapon-detail-tier"
+                    class="weapon-detail-tier"
+                    data-tier="C"
+                >
+                    C TIER
+                </span>
+
+                <div id="weapon-detail-stars" class="weapon-detail-stars">
+                    ☆☆☆☆☆
+                </div>
+
+                <div class="weapon-detail-score">
+                    <span>META SCORE</span>
+
+                    <strong id="weapon-detail-meta-score">
+                        0 / 10
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+        <section class="weapon-detail-section">
+
+            <div class="weapon-detail-section-heading">
+                <p>PERFORMANCE PROFILE</p>
+                <h2>CORE STATISTICS</h2>
+            </div>
+
+            <div class="weapon-detail-stat-grid">
+
+                <div class="weapon-detail-stat">
+                    <span>DPS</span>
+                    <strong id="weapon-detail-dps">0</strong>
+                    <small>Theoretical body-shot damage per second</small>
+                </div>
+
+                <div class="weapon-detail-stat">
+                    <span>RPM</span>
+                    <strong id="weapon-detail-rpm">0</strong>
+                    <small>Rounds fired per minute</small>
+                </div>
+
+                <div class="weapon-detail-stat">
+                    <span>BODY DAMAGE</span>
+                    <strong id="weapon-detail-body">0</strong>
+                    <small>Damage caused by a body hit</small>
+                </div>
+
+                <div class="weapon-detail-stat">
+                    <span>HEAD DAMAGE</span>
+                    <strong id="weapon-detail-head">0</strong>
+                    <small>Damage caused by a headshot</small>
+                </div>
+
+                <div class="weapon-detail-stat">
+                    <span>LEG DAMAGE</span>
+                    <strong id="weapon-detail-leg">0</strong>
+                    <small>Damage caused by a leg hit</small>
+                </div>
+
+                <div class="weapon-detail-stat">
+                    <span>HEADSHOT MULTIPLIER</span>
+                    <strong id="weapon-detail-head-multiplier">0×</strong>
+                    <small>Head damage divided by body damage</small>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="weapon-detail-section">
+
+            <div class="weapon-detail-section-heading">
+                <p>AMMUNITION CAPACITY</p>
+                <h2>MAGAZINE SIZES</h2>
+            </div>
+
+            <div class="weapon-magazine-grid">
+
+                <div class="weapon-magazine-level">
+                    <span>BASE</span>
+                    <strong id="weapon-mag-base">0</strong>
+                </div>
+
+                <div class="weapon-magazine-level">
+                    <span>LEVEL I</span>
+                    <strong id="weapon-mag-level1">0</strong>
+                </div>
+
+                <div class="weapon-magazine-level">
+                    <span>LEVEL II</span>
+                    <strong id="weapon-mag-level2">0</strong>
+                </div>
+
+                <div class="weapon-magazine-level">
+                    <span>LEVEL III</span>
+                    <strong id="weapon-mag-level3">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="weapon-detail-section weapon-analysis-section">
+
+            <div class="weapon-detail-section-heading">
+                <p>STATISTICAL INTERPRETATION</p>
+                <h2>ANALYZER SUMMARY</h2>
+            </div>
+
+            <p id="weapon-analysis-text" class="weapon-analysis-text">
+                Analysis unavailable.
+            </p>
+
+            <div class="weapon-analysis-notice">
+                The Meta Score is an experimental statistical rating created
+                for Apex//Analyzer. It is not an official Respawn Entertainment
+                or Electronic Arts weapon ranking.
+            </div>
+
+        </section>
+
+        <section class="weapon-detail-section weapon-methodology-section">
+
+    <div class="weapon-detail-section-heading">
+        <p>METHODOLOGY</p>
+        <h2>HOW THE ANALYZER WORKS</h2>
+    </div>
+
+    <div class="methodology-grid">
+
+        <article class="methodology-card">
+            <h3>META SCORE</h3>
+
+            <p>
+                The Meta Score is a custom statistical rating developed
+                for Apex//Analyzer. The current model evaluates body damage,
+                fire rate and Level III magazine capacity.
+            </p>
+        </article>
+
+        <article class="methodology-card">
+            <h3>DPS CALCULATION</h3>
+
+            <p>
+                Theoretical DPS is calculated from body damage and rounds
+                per minute using the following formula:
+            </p>
+
+            <div class="methodology-formula">
+                DPS = Body Damage × RPM ÷ 60
+            </div>
+        </article>
+
+        <article class="methodology-card">
+            <h3>TIER CLASSIFICATION</h3>
+
+            <p>
+                Weapons are grouped according to their Analyzer Score:
+            </p>
+
+            <ul class="methodology-tier-list">
+                <li><strong>S Tier:</strong> 9–10 points</li>
+                <li><strong>A Tier:</strong> 7–8 points</li>
+                <li><strong>B Tier:</strong> 5–6 points</li>
+                <li><strong>C Tier:</strong> 0–4 points</li>
+            </ul>
+        </article>
+
+        <article class="methodology-card">
+            <h3>MODEL LIMITATIONS</h3>
+
+            <p>
+                The current model does not yet account for recoil, reload
+                time, projectile speed, attachments, effective range,
+                player accuracy or weapon-class-specific behavior.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+        <div class="weapon-detail-actions">
+
+            <a href="weapons.html" class="weapon-detail-secondary-button">
+                ← Back to Weapon Database
+            </a>
+
+            <a href="analyze.html#weapon-comparison" class="supplybin-button">
+                Compare Weapons
+            </a>
+
+        </div>
+
+    </article>
+
+</main>
+
+<footer id="footer">
+
+    <div class="footer-content">
+
+        <p class="footer-title">
+            APEX//ANALYZER MODULES
+        </p>
+
+        <nav class="footer-navigation" aria-label="Footer navigation">
+            <a href="analyze.html#player-tracker">
+                Player Tracker
+            </a>
+
+            <a href="analyze.html#weapon-comparison">
+                Weapon Comparison
+            </a>
+
+            <a href="analyze.html#dps-calculator">
+                DPS Calculator
+            </a>
+
+            <a href="tierlist.html">
+                Weapon Tier List
+            </a>
+
+            <a href="weapons.html">
+                Weapon Database
+            </a>
+        </nav>
+
+    </div>
+
+    <p id="copyright">
+        COPYRIGHT &copy; 2026 APEX//ANALYZER.
+        ALL RIGHTS RESERVED.
+        DEVELOPED BY TIBOR JENEI
+    </p>
+
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/weapon-details.js"></script>
+
+</body>
+</html>

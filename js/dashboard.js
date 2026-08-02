@@ -41,6 +41,7 @@ async function searchWeapon() {
     const resultDiv = document.getElementById("comparison-result");
 
     if (!resultDiv) return;
+
     if (!w1Id || !w2Id) {
         resultDiv.innerHTML = `
             <div class="warning-message">
@@ -59,58 +60,215 @@ async function searchWeapon() {
         return;
     }
 
+    resultDiv.innerHTML = `
+        <div class="comparison-loading">
+            Loading comparison...
+        </div>
+    `;
+
     try {
         const [res1, res2] = await Promise.all([
-            fetch(`${BASE_URL}/api/weapons/${w1Id}`),
-            fetch(`${BASE_URL}/api/weapons/${w2Id}`)
+            fetch(`${BASE_URL}/api/weapons/${encodeURIComponent(w1Id)}`),
+            fetch(`${BASE_URL}/api/weapons/${encodeURIComponent(w2Id)}`)
         ]);
 
-        if (!res1.ok || !res2.ok) throw new Error("Fetch failed");
+        if (!res1.ok || !res2.ok) {
+            throw new Error(
+                `Weapon request failed: ${res1.status} / ${res2.status}`
+            );
+        }
 
         const w1 = await res1.json();
         const w2 = await res2.json();
 
-        const w1Dmg = w1.damage ? (w1.damage.body || 0) : 0;
-        const w2Dmg = w2.damage ? (w2.damage.body || 0) : 0;
+        const w1Dmg = Number(w1.damage?.body) || 0;
+        const w2Dmg = Number(w2.damage?.body) || 0;
 
-        const w1Rpm = w1.rpm || 0;
-        const w2Rpm = w2.rpm || 0;
+        const w1Rpm = Number(w1.rpm) || 0;
+        const w2Rpm = Number(w2.rpm) || 0;
 
-        const w1Dps = w1Rpm > 0 ? Math.round((w1Dmg * w1Rpm) / 60) : 0;
-        const w2Dps = w2Rpm > 0 ? Math.round((w2Dmg * w2Rpm) / 60) : 0;
+        const w1Dps = Number.isFinite(Number(w1.dps))
+            ? Number(w1.dps)
+            : Math.round((w1Dmg * w1Rpm) / 60);
 
-        let w1DpsClass = "", w2DpsClass = "";
-        let w1DmgClass = "", w2DmgClass = "";
+        const w2Dps = Number.isFinite(Number(w2.dps))
+            ? Number(w2.dps)
+            : Math.round((w2Dmg * w2Rpm) / 60);
 
-        if (w1Dps > w2Dps) { w1DpsClass = "winner-stat"; w2DpsClass = "loser-stat"; }
-        else if (w2Dps > w1Dps) { w2DpsClass = "winner-stat"; w1DpsClass = "loser-stat"; }
+        const w1Meta = Number(w1.metaScore) || 0;
+        const w2Meta = Number(w2.metaScore) || 0;
 
-        if (w1Dmg > w2Dmg) { w1DmgClass = "winner-stat"; w2DmgClass = "loser-stat"; }
-        else if (w2Dmg > w1Dmg) { w2DmgClass = "winner-stat"; w1DmgClass = "loser-stat"; }
+        const w1Tier = String(w1.tier || "C").toUpperCase();
+        const w2Tier = String(w2.tier || "C").toUpperCase();
+
+        const w1Stars = w1.stars || "☆☆☆☆☆";
+        const w2Stars = w2.stars || "☆☆☆☆☆";
+
+        const dpsClasses = getComparisonClasses(w1Dps, w2Dps);
+        const damageClasses = getComparisonClasses(w1Dmg, w2Dmg);
+        const rpmClasses = getComparisonClasses(w1Rpm, w2Rpm);
+        const metaClasses = getComparisonClasses(w1Meta, w2Meta);
 
         resultDiv.innerHTML = `
-            <div class="compare-grid" style="margin-top: 15px; width: 100%;">
-                <div class="compare-column">
-                    <div class="compare-weapon-title" style="color: #ff2a2a; font-family: 'Orbitron'; margin-bottom: 8px;">${w1.name}</div>
-                    <div class="compare-stat-box ${w1DpsClass}"><small>DPS</small><strong>${w1Dps}</strong></div>
-                    <div class="compare-stat-box ${w1DmgClass}"><small>DAMAGE</small><strong>${w1Dmg}</strong></div>
-                    <div class="compare-stat-box"><small>RPM</small><strong>${w1Rpm}</strong></div>
+            <div class="compare-grid">
+
+                <article class="compare-column compare-column-left">
+
+                    <div class="compare-weapon-header">
+                        <h4 class="compare-weapon-title">
+                            ${escapeComparisonHtml(w1.name || "Unknown Weapon")}
+                        </h4>
+
+                        <p class="compare-weapon-class">
+                            ${escapeComparisonHtml(w1.class || "Unknown Class")}
+                        </p>
+
+                        <span
+                            class="compare-tier-badge"
+                            data-tier="${escapeComparisonHtml(w1Tier)}"
+                        >
+                            ${escapeComparisonHtml(w1Tier)} TIER
+                        </span>
+
+                        <div class="compare-stars">
+                            ${escapeComparisonHtml(w1Stars)}
+                        </div>
+                    </div>
+
+                    <div class="compare-stat-box ${dpsClasses.first}">
+                        <small>DPS</small>
+                        <strong>${w1Dps}</strong>
+                    </div>
+
+                    <div class="compare-stat-box ${damageClasses.first}">
+                        <small>BODY DAMAGE</small>
+                        <strong>${w1Dmg}</strong>
+                    </div>
+
+                    <div class="compare-stat-box ${rpmClasses.first}">
+                        <small>RPM</small>
+                        <strong>${w1Rpm}</strong>
+                    </div>
+
+                    <div class="compare-stat-box ${metaClasses.first}">
+                        <small>META SCORE</small>
+                        <strong>${w1Meta}/10</strong>
+                    </div>
+
+                    <a
+                        class="compare-details-link"
+                        href="weapon.html?id=${encodeURIComponent(w1.id)}"
+                    >
+                        View Details
+                    </a>
+
+                </article>
+
+                <div class="vs-divider">
+                    VS
                 </div>
 
-                <div class="vs-divider" style="font-family: 'Orbitron'; color: #ff4d4d; font-weight: bold; align-self: center; padding: 0 5px;">VS</div>
+                <article class="compare-column compare-column-right">
 
-                <div class="compare-column">
-                    <div class="compare-weapon-title" style="color: #ffbc0d; font-family: 'Orbitron'; margin-bottom: 8px;">${w2.name}</div>
-                    <div class="compare-stat-box ${w2DpsClass}"><small>DPS</small><strong>${w2Dps}</strong></div>
-                    <div class="compare-stat-box ${w2DmgClass}"><small>DAMAGE</small><strong>${w2Dmg}</strong></div>
-                    <div class="compare-stat-box"><small>RPM</small><strong>${w2Rpm}</strong></div>
-                </div>
+                    <div class="compare-weapon-header">
+                        <h4 class="compare-weapon-title">
+                            ${escapeComparisonHtml(w2.name || "Unknown Weapon")}
+                        </h4>
+
+                        <p class="compare-weapon-class">
+                            ${escapeComparisonHtml(w2.class || "Unknown Class")}
+                        </p>
+
+                        <span
+                            class="compare-tier-badge"
+                            data-tier="${escapeComparisonHtml(w2Tier)}"
+                        >
+                            ${escapeComparisonHtml(w2Tier)} TIER
+                        </span>
+
+                        <div class="compare-stars">
+                            ${escapeComparisonHtml(w2Stars)}
+                        </div>
+                    </div>
+
+                    <div class="compare-stat-box ${dpsClasses.second}">
+                        <small>DPS</small>
+                        <strong>${w2Dps}</strong>
+                    </div>
+
+                    <div class="compare-stat-box ${damageClasses.second}">
+                        <small>BODY DAMAGE</small>
+                        <strong>${w2Dmg}</strong>
+                    </div>
+
+                    <div class="compare-stat-box ${rpmClasses.second}">
+                        <small>RPM</small>
+                        <strong>${w2Rpm}</strong>
+                    </div>
+
+                    <div class="compare-stat-box ${metaClasses.second}">
+                        <small>META SCORE</small>
+                        <strong>${w2Meta}/10</strong>
+                    </div>
+
+                    <a
+                        class="compare-details-link"
+                        href="weapon.html?id=${encodeURIComponent(w2.id)}"
+                    >
+                        View Details
+                    </a>
+
+                </article>
+
+            </div>
+
+            <div class="comparison-methodology">
+                <strong>How to read this comparison:</strong>
+                green values indicate the statistically higher result,
+                while red values indicate the lower result.
+                The Meta Score is an experimental Apex//Analyzer rating.
             </div>
         `;
-    } catch (err) {
-        console.error("Comparison error:", err);
-        resultDiv.innerHTML = `<div class="warning-message">ERROR LOADING WEAPON DATA</div>`;
+
+    } catch (error) {
+        console.error("Comparison error:", error);
+
+        resultDiv.innerHTML = `
+            <div class="warning-message">
+                ERROR LOADING WEAPON DATA
+            </div>
+        `;
     }
+}
+
+function getComparisonClasses(firstValue, secondValue) {
+    if (firstValue > secondValue) {
+        return {
+            first: "winner-stat",
+            second: "loser-stat"
+        };
+    }
+
+    if (secondValue > firstValue) {
+        return {
+            first: "loser-stat",
+            second: "winner-stat"
+        };
+    }
+
+    return {
+        first: "equal-stat",
+        second: "equal-stat"
+    };
+}
+
+function escapeComparisonHtml(value) {
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
 }
 
 async function searchTriggered() {
