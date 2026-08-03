@@ -403,3 +403,112 @@
         box-sizing: border-box;
     }
 }
+
+.weapon-combat-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 35px;
+    min-height: 260px;
+}
+
+.weapon-combat-card {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+    padding: 24px;
+    backdrop-filter: blur(6px);
+}
+
+.weapon-combat-card h3 {
+    color: #ffbc0d;
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.weapon-combat-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.weapon-combat-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:14px;
+    line-height:1.5;
+}
+
+.weapon-combat-item.strength span{
+    color:#2ecc71;
+    font-weight:bold;
+}
+
+.weapon-combat-item.strength p{
+    color:#d7d7d7;
+}
+
+.weapon-combat-item.weakness span{
+    color:#ff4d4d;
+    font-weight:bold;
+}
+
+.weapon-combat-item.weakness p{
+    color:#d7d7d7;
+}
+
+#weapon-playstyle{
+    line-height:1.8;
+    color:#d7d7d7;
+}
+
+.weapon-combat-section .weapon-detail-section-heading p{
+    color: #da291c !important;
+}
+
+.weapon-combat-section .weapon-detail-section-heading h2{
+    color: #f5f5f5 !important;
+}
+
+.weapon-combat-card h3{
+    color: #ffbc0d !important;
+}
+
+.weapon-combat-section > .section-label {
+    color: #da291c !important;
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+}
+
+.weapon-combat-section > h2 {
+    margin: 8px 0 28px;
+    color: #ffffff !important;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#weapon-strengths,
+#weapon-weaknesses {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.weapon-section-label{
+    margin:0 0 8px;
+    color:#da291c;
+    font-family:"Orbitron",sans-serif;
+    font-size:.62rem;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}

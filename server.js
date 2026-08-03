@@ -51,3 +51,58 @@ if (require.main === module) {
 
 module.exports = app;
 
+app.get("/api/tier-stats", async (req, res) => {
+
+    try {
+
+        const weaponCountResult = await pool.query(`
+            SELECT COUNT(*) AS count
+            FROM weapons;
+        `);
+
+        const averageDpsResult = await pool.query(`
+            SELECT ROUND(AVG(dps)) AS average
+            FROM weapons;
+        `);
+
+        const topWeaponResult = await pool.query(`
+            SELECT name
+            FROM weapons
+            ORDER BY metascore DESC
+            LIMIT 1;
+        `);
+
+        const classCountResult = await pool.query(`
+            SELECT COUNT(DISTINCT class) AS count
+            FROM weapons;
+        `);
+
+        res.json({
+
+            weaponCount:
+                Number(weaponCountResult.rows[0].count),
+
+            averageDps:
+                Number(averageDpsResult.rows[0].average),
+
+            topWeapon:
+                topWeaponResult.rows[0].name,
+
+            weaponClasses:
+                Number(classCountResult.rows[0].count)
+
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+
+            error: "Failed to load tier statistics."
+
+        });
+
+    }
+
+});

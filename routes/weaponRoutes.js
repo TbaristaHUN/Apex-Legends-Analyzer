@@ -14,16 +14,41 @@ function createWeaponRouter({
     } = weaponService;
 
     router.get("/weapons", async (req, res) => {
-        try {
-            const weapons = await getAllWeapons(pool);
-            return res.json(weapons);
-        } catch (error) {
-            console.error("Failed to fetch weapons:", error.message);
-            return res.status(500).json({
-                error: "Failed to fetch weapons from database."
-            });
-        }
-    });
+    try {
+        const weapons = await getAllWeapons(pool);
+
+        const enrichedWeapons = weapons.map((weapon) => {
+            console.log(weapon);
+            const meta = calculateMetaScore(weapon);
+            const bodyDamage = Number(weapon.damage?.body) || 0;
+            const rpm = Number(weapon.rpm) || 0;
+
+            return {
+                id: weapon.id,
+                name: weapon.name,
+                class: weapon.class,
+                rpm,
+                damage: weapon.damage,
+                mag_sizes: weapon.mag_sizes,
+
+                dps: Math.round((bodyDamage * rpm) / 60),
+
+                metaScore: meta.score,
+                tier: meta.tier,
+                stars: meta.stars
+            };
+        });
+
+        return res.json(enrichedWeapons);
+
+    } catch (error) {
+        console.error("Failed to fetch weapons:", error.message);
+
+        return res.status(500).json({
+            error: "Failed to fetch weapons from database."
+        });
+    }
+});
 
     router.get("/weapons/top-meta", async (req, res) => {
         const requestedLimit = Number.parseInt(req.query.limit, 10);

@@ -406,3 +406,79 @@
         justify-content: center;
     }
 }
+
+.weapon-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 14px 0;
+}
+
+.weapon-stars {
+    color: #ffbc0d;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.weapon-tier {
+    color: #da291c;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.weapon-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.weapon-stat {
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.weapon-stat span {
+    display: block;
+    color: #8f8f95;
+    font-size: .72rem;
+}
+
+.weapon-stat strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 1rem;
+    color: white;
+}
+
+.weapon-details-button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.weapon-database-card {
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    animation: fadeInCard .35s ease forwards;
+
+}
+
+@keyframes fadeInCard {
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}

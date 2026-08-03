@@ -1,8 +1,14 @@
 async function getAllWeapons(pool) {
     const result = await pool.query(`
-        SELECT id, name, class
+        SELECT
+            id,
+            name,
+            class,
+            rpm,
+            damage,
+            mag_sizes
         FROM weapons
-        ORDER BY name ASC
+        ORDER BY name
     `);
 
     return result.rows;

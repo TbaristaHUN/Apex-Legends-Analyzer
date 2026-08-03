@@ -365,3 +365,39 @@
     line-height: 1.55;
 }
 
+.tier-stats-section{
+    margin:40px 0;
+}
+
+.tier-stats-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 260px);
+    justify-content:center;
+    gap:20px;
+}
+
+.tier-stat-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;
+    padding:24px;
+    text-align:center;
+    backdrop-filter:blur(6px);
+}
+
+.tier-stat-card span{
+    display:block;
+    margin-bottom:12px;
+    color:#da291c;
+    font-family:"Orbitron",sans-serif;
+    font-size:.72rem;
+    letter-spacing:2px;
+}
+
+.tier-stat-card strong{
+    display:block;
+    color:#ffffff;
+    font-size:2rem;
+    font-family:"Orbitron",sans-serif;
+}
+
