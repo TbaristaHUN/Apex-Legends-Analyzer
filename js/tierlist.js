@@ -9,7 +9,7 @@ async function loadTierList() {
 
     try {
         const response = await fetch(
-            `${BASE_URL}/api/weapons/top-meta?limit=25`
+            `${BASE_URL}/api/weapons/top-meta?limit=50`
         );
 
         if (!response.ok) {
@@ -132,4 +132,63 @@ function getTierDescription(tier) {
     return descriptions[tier] || "";
 }
 
-document.addEventListener("DOMContentLoaded", loadTierList);
+async function loadTierStatistics() {
+
+    try {
+
+        const response = await fetch(
+            `${BASE_URL}/api/weapons/top-meta?limit=100`
+        );
+
+        if (!response.ok) {
+            throw new Error();
+        }
+
+        const data = await response.json();
+
+        const weapons = data.weapons || [];
+
+        document.getElementById("tier-weapon-count").textContent =
+            weapons.length;
+
+        const averageDps =
+            weapons.reduce(
+                (sum, weapon) => sum + weapon.dps,
+                0
+            ) / weapons.length;
+
+        document.getElementById("tier-average-dps").textContent =
+            Math.round(averageDps);
+
+        const topWeapon = weapons[0];
+
+        document.getElementById("tier-top-weapon").textContent =
+            topWeapon.name;
+
+        const classCount =
+            new Set(
+                weapons.map(
+                    weapon => weapon.class
+                )
+            ).size;
+
+        document.getElementById("tier-class-count").textContent =
+            classCount;
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Tier statistics error:",
+            error
+        );
+
+    }
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadTierList();
+    loadTierStatistics();
+});
