@@ -727,3 +727,25 @@
     margin: 30px auto 0;
     width: 100%;
 }
+
+.player-name-title {
+    color: #da291c;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+
+.icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+
+.stats-icon {
+    width: 45px;
+    height: 45px;
+}

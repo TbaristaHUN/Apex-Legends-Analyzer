@@ -334,13 +334,12 @@ async function loadGlobalStats() {
 
 async function searchPlayer() {
     const playerNameInput = document.getElementById("playerNameInput");
-    const platformSelect = document.getElementById("platformSelect");
-    const playerStatsDisplay = document.getElementById("playerStatsDisplay");
+    const playerStatsDisplay =
+    document.getElementById("playerStatsDisplay");
 
-    if (!playerNameInput || !platformSelect || !playerStatsDisplay) return;
+if (!playerNameInput || !playerStatsDisplay) return;
 
-    const playerName = playerNameInput.value.trim();
-    const platform = platformSelect.value;
+const playerName = playerNameInput.value.trim();
 
     if (!playerName) {
         alert("Please enter a player name.");
@@ -348,7 +347,8 @@ async function searchPlayer() {
     }
 
     try {
-        const response = await fetch(`${BASE_URL}/api/player?player=${encodeURIComponent(playerName)}&platform=${platform}`);
+        const response = await fetch(
+    `${BASE_URL}/api/player?player=${encodeURIComponent(playerName)}`);
 
         if (!response.ok) {
             alert("Player not found or Apex API rate limited.");
@@ -357,10 +357,19 @@ async function searchPlayer() {
 
         const data = await response.json();
 
-        const globalData = data.global || {};
-        const rankData = data.rank || {};
-        const legendData = data.legend || {};
+const globalData = data.global || {};
+const rankData = data.rank || {};
+const legendData = data.legend || {};
 
+const platformElement =
+    document.getElementById("resPlayerPlatform");
+
+if (platformElement) {
+    platformElement.textContent =
+        data.platform ||
+        globalData.platform ||
+        "Unknown";
+}
         document.getElementById("resPlayerName").textContent = globalData.name || playerName;
         document.getElementById("resPlayerLevel").textContent = globalData.level !== undefined ? globalData.level : "N/A";
         
@@ -417,4 +426,12 @@ async function searchPlayer() {
 document.addEventListener("DOMContentLoaded", () => {
     populateWeaponSelect();
 });
+
+const platformElement =
+    document.getElementById("resPlayerPlatform");
+
+if (platformElement) {
+    platformElement.textContent =
+        data.platform || "Unknown";
+}
 

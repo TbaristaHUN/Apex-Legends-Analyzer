@@ -43,32 +43,60 @@
                     <input type="text" id="playerNameInput" placeholder="Enter player name..." required>
                 </div>
 
-                <div class="input-group">
-                    <label for="platformSelect">Platform:</label>
-                    <select id="platformSelect">
-                        <option value="PC">PC (Steam / EA)</option>
-                        <option value="X1">Xbox</option>
-                        <option value="PS4">PlayStation</option>
-                    </select>
-                </div>
+<button
+    class="supplybin-button"
+    id="search-player-btn"
+    onclick="searchPlayer()">
+    Search player
+</button>
 
-                <button class="supplybin-button" id="search-player-btn" onclick="searchPlayer()">Search player</button>
+<div id="playerStatsDisplay" style="display:none; margin-top:15px;">
 
-                <div id="playerStatsDisplay" class="player-stats-box" style="display: none; margin-top: 15px;">
-                    <h4 id="resPlayerName" class="player-name-title" style="color: #da291c; font-family: 'Orbitron'; font-size: 1.1rem; margin-bottom: 8px;"></h4>
-                    
-                    <p class="stat-text" style="margin: 4px 0;">Main Legend: <span id="resPlayerLegend" class="highlight-yellow" style="color: #ffbc0d; font-weight: bold;"></span></p>
-                    <p class="stat-text" style="margin: 4px 0;">Level: <span id="resPlayerLevel" class="highlight-bold" style="font-weight: bold;"></span></p>
-                    <p class="stat-text" style="margin: 4px 0;">Rank: <span id="resPlayerRank" class="highlight-bold" style="font-weight: bold;"></span></p>
-                    <div id="bannerTrackersContainer" style="margin-top: 8px;"></div>
-                                    
-                    <div class="icons-container" style="display: flex; justify-content: center; gap: 15px; margin-top: 10px;">
-                        <img id="resLegendImg" src="" alt="Legend Icon" class="stats-icon legend-icon" style="width: 45px; height: 45px; display: none;" />
-                        <img id="resRankImg" src="" alt="Rank Icon" class="stats-icon" style="width: 45px; height: 45px; display: none;" />
-                    </div>
-                </div>
-            </div>
+    <h4 id="resPlayerName" class="player-name-title"></h4>
 
+    <p class="stat-text">
+        Main Legend:
+        <span id="resPlayerLegend" class="highlight-yellow"></span>
+    </p>
+
+    <p class="stat-text">
+        Level:
+        <span id="resPlayerLevel" class="highlight-bold"></span>
+    </p>
+
+    <p class="stat-text">
+        Rank:
+        <span id="resPlayerRank" class="highlight-bold"></span>
+    </p>
+
+    <p class="stat-text">
+        Platform:
+        <span id="resPlayerPlatform" class="highlight-yellow">
+            N/A
+        </span>
+    </p>
+
+    <div id="bannerTrackersContainer" style="margin-top:10px;"></div>
+
+    <div class="icons-container">
+
+        <img id="resLegendImg"
+             src=""
+             alt="Legend Icon"
+             class="stats-icon legend-icon"
+             style="width:45px; height:45px; display:none;" />
+
+        <img id="resRankImg"
+             src=""
+             alt="Rank Icon"
+             class="stats-icon"
+             style="width:45px; height:45px; display:none;" />
+
+    </div>
+
+</div>
+
+</div>
             <div class="card weapon-comparison-card" id="weapon-comparison">
                 <h3>Weapon Comparison</h3>
                 
