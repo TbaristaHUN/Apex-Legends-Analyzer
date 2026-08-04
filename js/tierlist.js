@@ -1,4 +1,12 @@
-const BASE_URL = window.ApexAnalyzer.baseUrl;
+/* Apex//Analyzer - Weapon Tier List */
+
+const BASE_URL = window.ApexAnalyzer?.baseUrl
+    || (
+        window.location.hostname === "localhost"
+        || window.location.hostname === "127.0.0.1"
+            ? "http://localhost:3000"
+            : "https://apex-legends-analyzer-1.onrender.com"
+    );
 
 const TIER_ORDER = ["S", "A", "B", "C"];
 
@@ -133,9 +141,7 @@ function getTierDescription(tier) {
 }
 
 async function loadTierStatistics() {
-
     try {
-
         const response = await fetch(
             `${BASE_URL}/api/weapons/top-meta?limit=100`
         );
@@ -146,7 +152,11 @@ async function loadTierStatistics() {
 
         const data = await response.json();
 
-        const weapons = data.weapons || [];
+        const weapons = Array.isArray(data.weapons) ? data.weapons : [];
+
+        if (weapons.length === 0) {
+            return;
+        }
 
         document.getElementById("tier-weapon-count").textContent =
             weapons.length;

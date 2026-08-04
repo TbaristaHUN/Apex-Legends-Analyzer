@@ -1,4 +1,3 @@
-
 .weapon-details-page {
     width: min(94%, 1200px);
     margin: 0 auto;
@@ -26,6 +25,7 @@
 }
 
 .weapon-details-hero {
+    align-items: flex-start;
     display: flex;
     justify-content: space-between;
     gap: 35px;
@@ -58,7 +58,7 @@
     margin: 0;
     color: var(--text-primary, #ffffff);
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2.1rem, 6vw, 4.2rem);
+    font-size: clamp(2.6rem, 5vw, 3.8rem);
     line-height: 1.05;
     letter-spacing: 1px;
     text-align: left;
@@ -82,6 +82,7 @@
     background: rgba(0, 0, 0, 0.28);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
+    width: 240px;
 }
 
 .weapon-detail-tier {
@@ -177,7 +178,7 @@
 }
 
 .weapon-detail-stat {
-    padding: 18px;
+    padding: 22px;
     background: rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 9px;
@@ -197,7 +198,7 @@
     margin-bottom: 8px;
     color: var(--color-yellow, #ffbc0d);
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.45rem;
+    font-size: 1.6rem;
 }
 
 .weapon-detail-stat small {
@@ -233,7 +234,7 @@
 .weapon-magazine-level strong {
     color: #ffffff;
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.45rem;
+    font-size: 1.6rem;
 }
 
 .weapon-analysis-section {
@@ -325,15 +326,19 @@
 
 .methodology-formula {
     margin-top: 15px;
-    padding: 13px;
+    padding: 14px 12px;
     color: #ffffff;
     background: rgba(255, 188, 13, 0.055);
     border: 1px solid rgba(255, 188, 13, 0.18);
     border-radius: 8px;
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.76rem;
-    letter-spacing: 0.5px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
     text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 .methodology-tier-list {
@@ -396,6 +401,10 @@
 
     .weapon-detail-actions {
         flex-direction: column;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
     }
 
     .weapon-detail-actions a {
@@ -417,7 +426,7 @@
     background: rgba(255,255,255,.03);
     border: 1px solid rgba(255,255,255,.08);
     border-radius: 12px;
-    padding: 24px;
+    padding: 28px;
     backdrop-filter: blur(6px);
 }
 
@@ -446,19 +455,23 @@
 .weapon-combat-item.strength span{
     color:#2ecc71;
     font-weight:bold;
+    margin-bottom: 18px;
 }
 
 .weapon-combat-item.strength p{
     color:#d7d7d7;
+    margin-bottom: 18px;
 }
 
 .weapon-combat-item.weakness span{
     color:#ff4d4d;
     font-weight:bold;
+    margin-bottom: 18px;
 }
 
 .weapon-combat-item.weakness p{
     color:#d7d7d7;
+    margin-bottom: 18px;
 }
 
 #weapon-playstyle{

@@ -1,3 +1,5 @@
+/* Apex//Analyzer - Weapon Database */
+
 const BASE_URL = window.ApexAnalyzer?.baseUrl
     || (
         window.location.hostname === "localhost"
@@ -21,17 +23,12 @@ const totalCount = document.getElementById("total-weapon-count");
 const resetButton = document.getElementById("reset-weapon-filters");
 
 document.addEventListener("DOMContentLoaded", () => {
-
     loadWeapons();
 
     searchInput.addEventListener("input", applyFilters);
-
     classFilter.addEventListener("change", applyFilters);
-
     sortSelect.addEventListener("change", applyFilters);
-
     resetButton.addEventListener("click", resetFilters);
-
 });
 
 async function loadWeapons() {
@@ -44,8 +41,7 @@ async function loadWeapons() {
             </p>
         `;
 
-        const response =
-            await fetch(`${BASE_URL}/api/weapons`);
+        const response = await fetch(`${BASE_URL}/api/weapons`);
 
         if (!response.ok) {
             throw new Error(
@@ -54,18 +50,12 @@ async function loadWeapons() {
         }
 
         allWeapons = await response.json();
+        filteredWeapons = [...allWeapons];
+        totalCount.textContent = allWeapons.length;
 
-filteredWeapons = [...allWeapons];
-
-totalCount.textContent = allWeapons.length;
-
-populateClassFilter();
-
-applyFilters();
-
-    }
-
-    catch(error){
+        populateClassFilter();
+        applyFilters();
+    } catch (error) {
 
         console.error(error);
 
@@ -76,7 +66,6 @@ applyFilters();
         `;
 
     }
-
 }
 
 function applyFilters() {
@@ -120,6 +109,11 @@ function applyFilters() {
                 b.dps - a.dps);
             break;
 
+        case "damage-desc":
+            filteredWeapons.sort((a, b) =>
+                b.damage.body - a.damage.body);
+            break;
+
         case "rpm-desc":
             filteredWeapons.sort((a, b) =>
                 b.rpm - a.rpm);
@@ -130,8 +124,7 @@ function applyFilters() {
 
 }
 
-function resetFilters(){
-
+function resetFilters() {
     searchInput.value = "";
 
     classFilter.value = "all";
@@ -139,7 +132,6 @@ function resetFilters(){
     sortSelect.value = "name-asc";
 
     applyFilters();
-
 }
 
 function renderWeapons(weapons) {
@@ -158,9 +150,7 @@ function renderWeapons(weapons) {
         return;
     }
 
-    weaponGrid.innerHTML = weapons.map(weapon => {
-
-        return `
+    weaponGrid.innerHTML = weapons.map((weapon) => `
             <article
                 class="weapon-database-card"
                 data-tier="${weapon.tier}"
@@ -220,9 +210,7 @@ function renderWeapons(weapons) {
                 </a>
 
             </article>
-        `;
-
-    }).join("");
+        `).join("");
 
 }
 
@@ -235,7 +223,7 @@ function populateClassFilter() {
         <option value="all">All Classes</option>
     `;
 
-    classes.forEach(weaponClass => {
+    classes.forEach((weaponClass) => {
 
         classFilter.innerHTML += `
             <option value="${weaponClass}">
@@ -244,5 +232,4 @@ function populateClassFilter() {
         `;
 
     });
-
 }

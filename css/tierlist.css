@@ -1,37 +1,103 @@
 .tier-list-page {
     width: min(94%, 1400px);
-    margin: 0 auto;
-    padding: 55px 0 80px;
+    margin-inline: auto;
+    padding: 48px 0 80px;
+}
+
+.tier-list-page,
+.tier-list-page *,
+.tier-list-page *::before,
+.tier-list-page *::after {
+    box-sizing: border-box;
 }
 
 .tier-list-header {
     max-width: 760px;
-    margin: 0 auto 45px;
+    margin: 0 auto 40px;
     text-align: center;
 }
 
 .tier-list-eyebrow {
     margin: 0 0 10px;
-    color: #da291c;
+    color: var(--color-red, #da291c);
     font-family: 'Orbitron', sans-serif;
     font-size: 0.72rem;
     font-weight: 700;
+    line-height: 1.4;
     letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .tier-list-header h1 {
     margin: 0;
     color: #ffffff;
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.15;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .tier-list-header > p:last-child {
+    max-width: 680px;
     margin: 16px auto 0;
     color: #9999a0;
+    font-family: 'Roboto', sans-serif;
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.65;
+}
+
+/* ---------- Summary statistics ---------- */
+
+.tier-stats-section {
+    margin: 34px 0 30px;
+}
+
+.tier-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.tier-stat-card {
+    display: flex;
+    min-width: 0;
+    min-height: 110px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 14px;
+    overflow: hidden;
+    color: #ffffff;
+    background: rgba(22, 22, 28, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.tier-stat-card span {
+    display: block;
+    color: var(--color-red, #da291c);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.tier-stat-card strong {
+    display: block;
+    max-width: 100%;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
 }
 
 .tier-list-container {
@@ -48,11 +114,12 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     font-family: 'Orbitron', sans-serif;
+    line-height: 1.6;
     text-align: center;
 }
 
 .tier-list-error {
-    color: #da291c;
+    color: var(--color-red, #da291c);
 }
 
 .tier-section {
@@ -66,14 +133,15 @@
     border-radius: 14px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.48);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .tier-s {
-    border-left-color: #da291c;
+    border-left-color: var(--color-red, #da291c);
 }
 
 .tier-a {
-    border-left-color: #ffbc0d;
+    border-left-color: var(--color-yellow, #ffbc0d);
 }
 
 .tier-b {
@@ -88,6 +156,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    min-width: 0;
     padding-right: 18px;
     border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -105,10 +174,11 @@
     font-family: 'Orbitron', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
+    line-height: 1;
 }
 
 .tier-a .tier-letter {
-    color: #ffbc0d;
+    color: var(--color-yellow, #ffbc0d);
     background: rgba(255, 188, 13, 0.1);
     border-color: rgba(255, 188, 13, 0.48);
 }
@@ -130,40 +200,38 @@
     color: #ffffff;
     font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
+    line-height: 1.3;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .tier-label p {
     margin: 0;
     color: #888890;
+    font-family: 'Roboto', sans-serif;
     font-size: 0.76rem;
-    line-height: 1.4;
+    line-height: 1.45;
 }
+
 
 .tier-weapons {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
     gap: 14px;
+    min-width: 0;
 }
 
 .tier-weapon-card {
     display: flex;
+    min-width: 0;
     min-height: 145px;
     flex-direction: column;
     justify-content: space-between;
     padding: 16px;
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.035),
-            rgba(0, 0, 0, 0.18)
-        );
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(0, 0, 0, 0.18));
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
-    transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tier-weapon-card:hover {
@@ -178,13 +246,16 @@
     font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
     line-height: 1.3;
+    overflow-wrap: anywhere;
     text-transform: uppercase;
 }
 
 .tier-weapon-card p {
     margin: 6px 0 0;
     color: #8d8d94;
+    font-family: 'Roboto', sans-serif;
     font-size: 0.74rem;
+    line-height: 1.4;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -198,8 +269,9 @@
 }
 
 .tier-stars {
-    color: #ffbc0d;
+    color: var(--color-yellow, #ffbc0d);
     font-size: 0.9rem;
+    line-height: 1;
     letter-spacing: 2px;
     white-space: nowrap;
 }
@@ -208,6 +280,7 @@
     color: #ffffff;
     font-family: 'Orbitron', sans-serif;
     font-size: 0.88rem;
+    line-height: 1.3;
     white-space: nowrap;
 }
 
@@ -216,10 +289,11 @@
     justify-content: space-between;
     gap: 10px;
     padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
     color: #9999a0;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
     font-family: 'Orbitron', sans-serif;
     font-size: 0.65rem;
+    line-height: 1.4;
     letter-spacing: 0.5px;
 }
 
@@ -232,16 +306,12 @@
     align-items: center;
     justify-content: center;
     color: #777780;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.025),
-            rgba(0, 0, 0, 0.12)
-        );
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.025), rgba(0, 0, 0, 0.12));
     border: 1px dashed rgba(255, 255, 255, 0.12);
     border-radius: 10px;
     font-family: 'Orbitron', sans-serif;
     font-size: 0.72rem;
+    line-height: 1.5;
     letter-spacing: 1.4px;
     text-align: center;
     text-transform: uppercase;
@@ -287,7 +357,9 @@
     font-family: 'Orbitron', sans-serif;
     font-size: 0.62rem;
     font-weight: 700;
+    line-height: 1.4;
     letter-spacing: 2.2px;
+    text-transform: uppercase;
 }
 
 .tier-methodology-header h2 {
@@ -295,17 +367,19 @@
     color: #ffffff;
     font-family: 'Orbitron', sans-serif;
     font-size: 1.15rem;
+    line-height: 1.35;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .tier-methodology-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
-    grid-template-columns: 1fr;
 }
 
 .tier-methodology-card {
+    min-width: 0;
     padding: 20px;
     background: rgba(0, 0, 0, 0.24);
     border: 1px solid rgba(255, 255, 255, 0.07);
@@ -317,7 +391,9 @@
     color: var(--color-yellow, #ffbc0d);
     font-family: 'Orbitron', sans-serif;
     font-size: 0.76rem;
+    line-height: 1.4;
     letter-spacing: 1.4px;
+    text-transform: uppercase;
 }
 
 .tier-methodology-card p {
@@ -338,11 +414,13 @@
     padding: 7px 0;
     color: #9b9ba3;
     border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+    font-family: 'Roboto', sans-serif;
     font-size: 0.82rem;
+    line-height: 1.55;
 }
 
 .tier-methodology-card li:last-child {
-    border-bottom: none;
+    border-bottom: 0;
 }
 
 .tier-methodology-card strong {
@@ -354,91 +432,42 @@
 .tier-methodology-notice {
     margin-top: 18px;
     padding: 14px;
-    color: #7f7f87;
+    color: #8d8d94;
     background: rgba(255, 188, 13, 0.035);
     border: 1px solid rgba(255, 188, 13, 0.13);
     border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
     font-size: 0.76rem;
-    line-height: 1.55;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .tier-list-page {
+        width: min(92%, 760px);
+        padding-top: 40px;
+    }
+
+    .tier-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tier-section {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .tier-label {
+        padding-right: 0;
+        padding-bottom: 18px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 }
 
 @media (max-width: 600px) {
-
     .tier-list-page {
         width: 92%;
-        padding-top: 30px;
-        padding-bottom: 60px;
-    }
-
-    .tier-list-header {
-        margin-bottom: 28px;
-    }
-
-    .tier-list-eyebrow {
-        font-size: .56rem;
-        letter-spacing: 2px;
-    }
-
-    .tier-list-header h1 {
-        font-size: 1.7rem;
-        line-height: 1.2;
-    }
-
-    .tier-list-header > p:last-child {
-        margin-top: 12px;
-        font-size: .8rem;
-        line-height: 1.5;
-    }
-    
-.tier-stats-section {
-    margin: 40px 0;
-}
-
-.tier-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 260px);
-    justify-content: center;
-    gap: 20px;
-}
-
-.tier-stat-card {
-    min-width: 0;
-    padding: 24px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    text-align: center;
-    backdrop-filter: blur(6px);
-}
-
-.tier-stat-card span {
-    display: block;
-    margin-bottom: 12px;
-    color: #da291c;
-    font-family: "Orbitron", sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.tier-stat-card strong {
-    display: block;
-    max-width: 100%;
-    color: #ffffff;
-    font-family: "Orbitron", sans-serif;
-    font-size: 2rem;
-    line-height: 1.15;
-    overflow-wrap: anywhere;
-    text-align: center;
-}
-
-@media (max-width: 600px) {
-
-    .tier-list-page {
-        width: 92%;
-        padding-top: 30px;
-        padding-bottom: 60px;
+        padding: 30px 0 60px;
     }
 
     .tier-list-header {
@@ -447,7 +476,6 @@
 
     .tier-list-eyebrow {
         font-size: 0.56rem;
-        line-height: 1.4;
         letter-spacing: 2px;
     }
 
@@ -460,7 +488,7 @@
     .tier-list-header > p:last-child {
         margin-top: 12px;
         font-size: 0.8rem;
-        line-height: 1.5;
+        line-height: 1.55;
     }
 
     .tier-stats-section {
@@ -473,38 +501,35 @@
     }
 
     .tier-stat-card {
-        padding: 16px 8px;
+        min-height: 92px;
+        padding: 14px 8px;
     }
 
     .tier-stat-card span {
-        margin-bottom: 8px;
         font-size: 0.5rem;
-        line-height: 1.3;
-        letter-spacing: 0.7px;
+        letter-spacing: 0.8px;
     }
 
     .tier-stat-card strong {
         font-size: 1.15rem;
-        line-height: 1.15;
     }
 
-    .tier-list-container {
-        gap: 16px;
+    .tier-list-loading,
+    .tier-list-error {
+        padding: 28px 18px;
+        font-size: 0.78rem;
     }
 
     .tier-section {
-        grid-template-columns: 1fr;
         gap: 16px;
         padding: 16px;
+        border-left-width: 4px;
         border-radius: 10px;
     }
 
     .tier-label {
         gap: 12px;
-        padding-right: 0;
         padding-bottom: 14px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .tier-letter {
@@ -527,6 +552,7 @@
     }
 
     .tier-weapon-card {
+        min-height: 138px;
         padding: 15px;
     }
 
@@ -548,7 +574,6 @@
         min-height: 90px;
         padding: 16px;
         font-size: 0.62rem;
-        line-height: 1.5;
     }
 
     .tier-methodology {
@@ -560,7 +585,35 @@
         font-size: 1rem;
     }
 
+    .tier-methodology-grid {
+        grid-template-columns: 1fr;
+    }
+
     .tier-methodology-card {
         padding: 18px;
+    }
+}
+
+@media (max-width: 420px) {
+    .tier-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tier-stat-card {
+        min-height: 88px;
+    }
+
+    .tier-stat-card strong {
+        font-size: 1.3rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tier-weapon-card {
+        transition: none;
+    }
+
+    .tier-weapon-card:hover {
+        transform: none;
     }
 }

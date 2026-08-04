@@ -1,44 +1,16 @@
 #main {
-    padding: 20px 40px;
-    padding-top: 110px;
-    align-items: flex-start;
-    justify-content: center;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 900px;
+    height: auto;
+    padding: 110px 40px 20px;
+    box-sizing: border-box;
     background-size: cover;
     background-position: center;
     background-image: url(../Images/my-interpretation-of-pathfinder-from-apex-legends-v0-blzmt61oxqp61.png.webp);
-    height: 900px;
-}
-
-live-hub-container {
-    display: flex 
-    flex-direction: row
-    justify-content: center 
-    align-items: flex-start
-    gap: 30px 
-    max-width: 950px 
-    margin: 40px auto 
-    position: relative;
-    z-index: 10;
-}
-
-.live-hub-container .card {
-    flex: 1 
-    width: 420px 
-    min-height: 320px 
-    background: rgba(18, 18, 22, 0.88) 
-    border: 1px solid rgba(218, 41, 28, 0.4) 
-    border-radius: 12px
-    padding: 24px 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) 
-    backdrop-filter: blur(8px);
-    position: relative 
-    transform: none 
-}
-
-.live-hub-container .card:hover {
-    border-color: #da291c 
-    box-shadow: 0 0 20px rgba(218, 41, 28, 0.25)
 }
 
 .countdown-card {
@@ -46,8 +18,8 @@ live-hub-container {
     min-width: 300px;
     text-align: center;
     background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 8px;
+    padding: 26px;
+    border-radius: 12px;
     border: 1px solid rgba(218, 41, 28, 0.4);
     color: #fff;
     font-family: 'Orbitron';
@@ -58,8 +30,8 @@ live-hub-container {
     min-width: 300px;
     text-align: center;
     background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 8px;
+    padding: 26px;
+    border-radius: 12px;
     border: 1px solid rgba(255, 188, 13, 0.4);
     color: #fff;
     font-family: 'Orbitron';
@@ -97,7 +69,7 @@ live-hub-container {
 }
 
 .timer-number-red {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
     font-weight: bold;
     color: #da291c;
 }
@@ -112,6 +84,22 @@ live-hub-container {
     font-family: 'Orbitron', sans-serif;
 }
 
+.pro-tip-box {
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 188, 13, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.pro-tip-label {
+    display: block;
+    margin-bottom: 6px;
+    color: #ffbc0d;
+    font-family: 'Orbitron', sans-serif;
+}
+
 .live-info-banner {
     background: rgba(15, 15, 18, 0.95);
     border-bottom: 1px solid rgba(218, 41, 28, 0.5);
@@ -121,7 +109,7 @@ live-hub-container {
     align-items: center;
     gap: 20px;
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     color: #e1e1e6;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     flex-wrap: wrap;
@@ -238,113 +226,12 @@ live-hub-container {
 }
 
 .featured-weapon-card h2 {
-
     font-family:'Orbitron';
     color:white;
     font-size:2rem;
     letter-spacing:1px;
     margin-bottom:6px;
-}
-
-#featured-weapon-content {
-    width: 100%;
-    font-family: 'Orbitron', sans-serif;
-    text-align: center;
-}
-
-.featured-weapon-name {
-    margin-top: 18px;
-    color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.65rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.featured-weapon-class {
-    margin-top: 7px;
-    color: #9b9ba2;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
-
-.meta-section {
-    margin: 22px 0;
-    padding: 16px 12px;
-    background: rgba(0, 0, 0, 0.32);
-    border: 1px solid rgba(255, 188, 13, 0.22);
-    border-radius: 8px;
-}
-
-.meta-stars {
-    color: #ffbc0d;
-    font-size: 1.35rem;
-    letter-spacing: 4px;
-    line-height: 1;
-}
-
-.meta-score-label {
-    margin-top: 12px;
-    color: #9999a0;
-    font-size: 0.66rem;
-    letter-spacing: 2px;
-}
-
-.meta-score-value {
-    margin-top: 5px;
-    color: #ffffff;
-    font-size: 1.55rem;
-    font-weight: 700;
-}
-
-.meta-tier {
-    display: inline-block;
-    margin-top: 11px;
-    padding: 5px 13px;
-    color: #ffffff;
-    background: #da291c;
-    border-radius: 4px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.featured-stats {
-    width: 100%;
-    margin-top: 8px;
-}
-
-.weapon-stat {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 12px 4px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-sizing: border-box;
-}
-
-.weapon-stat span {
-    color: #9999a0;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 1.2px;
-}
-
-.weapon-value {
-    color: #ffbc0d;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.95rem;
-}
-
-.featured-weapon-error {
-    margin-top: 25px;
-    color: #da291c;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.8rem;
+    border-radius:12px;
 }
 
 #featured-weapon-content{
@@ -353,6 +240,8 @@ live-hub-container {
     align-items:center;
     gap:10px;
     width:100%;
+    font-family:'Orbitron',sans-serif;
+    text-align:center;
 }
 
 .featured-title{
@@ -374,7 +263,7 @@ live-hub-container {
 
 .featured-name{
     font-family:'Orbitron',sans-serif;
-    font-size:2rem;
+    font-size:2.2rem;
     color:white;
     font-weight:700;
     margin-top:8px;

@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background-color: #1a1a1f;
@@ -50,10 +53,10 @@ header a {
     color: #f5f5f7;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: 'Orbitron';
+    font-family: 'Orbitron', sans-serif;
     font-weight: bold;
     padding: 12px;
-    text-shadow: 1px 1px 2px rgb(white);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.35);
 }
 
 header ul {
@@ -71,31 +74,9 @@ header ul {
     color: #f5f5f7;
 }
 
-.card {
-    background: rgba(26, 26, 30, 0.9); 
-    border: 1px solid #a84e09;
-    border-radius: 8px;
-    padding: 30px;
-    width: 350px; 
-    min-height: 480px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; 
-    align-items: center; 
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    min-width: 300px;
-
-}
-
-.card:hover {
-    transform: scale(1.5);
-}
-
 .card h3 {
     color: #f5f5f7; 
-    font-family: 'Orbitron';
+    font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
     font-size: 1.2rem;
     letter-spacing: 1px;
@@ -103,14 +84,13 @@ header ul {
     margin: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 .card {
     flex: 1;
+    justify-content: flex-start;
+    width: 350px;
     min-width: 320px;
     max-width: 380px;
+    min-height: 480px;
     background: rgba(18, 18, 20, 0.9);
     border: 1px solid #d35400;
     border-radius: 8px;
@@ -119,8 +99,10 @@ html {
     backdrop-filter: blur(8px);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card.player-tracker {
@@ -129,12 +111,9 @@ html {
 }
 
 .card:hover {
+    transform: translateY(-4px);
     border-color: #ff4d4d;
     box-shadow: 0 10px 40px rgba(255, 77, 77, 0.2);
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 #player-tracker,
@@ -195,4 +174,62 @@ html {
     line-height:1.7;
     margin-top:30px;
     padding:20px;
+}
+
+#footer {
+    margin-top: 80px;
+    padding: 45px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,.08);
+    background: #16161a;
+}
+
+.footer-title{
+    margin-bottom:28px;
+    color:#da291c;
+    font-family:'Orbitron',sans-serif;
+    font-size:.75rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.footer-nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:28px;
+    margin-bottom:35px;
+}
+
+.footer-nav a{
+    color:#9b9ba3;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family:'Orbitron',sans-serif;
+    font-size:.72rem;
+    transition:.25s;
+}
+
+.footer-nav a:hover{
+    color:#ffffff;
+}
+
+.footer-copy{
+    margin:10px 0;
+    color:#7f7f87;
+    font-size:.78rem;
+    line-height:1.7;
+}
+
+@media(max-width:768px){
+
+.footer-nav{
+    flex-direction:column;
+    gap:14px;
+}
+
+.footer-copy{
+    font-size:.72rem;
+}
+
 }

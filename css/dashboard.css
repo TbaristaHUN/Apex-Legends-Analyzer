@@ -44,18 +44,9 @@
     color: #ffffff;
 }
 
-.flex-container {
-    display: flex;
-    justify-content: center;  
-    align-items: center;  
-    gap: 30px;                
-    margin: 50px auto 0 auto; 
-    max-width: 1200px;
-}
-
 #calculator-result p {
     color: #cccccc;
-    font-size: 0.95 rem;
+    font-size: 0.95rem;
     margin-top: 10px;
 }
 
@@ -70,7 +61,7 @@
 .input-group label {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.8rem;
-    color: #ffffff; /
+    color: #ffffff;
     text-transform: uppercase;
     margin-bottom: 8px;  
     letter-spacing: 1px;
@@ -182,90 +173,12 @@
     margin-top: 10px;
 }
 
-// Weapon comparison box //
-.compare-grid {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.compare-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-
-.compare-weapon-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.85rem;
-    color: #fff;
-    font-weight: bold;
-    min-height: 35px; 
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-.compare-stat-box {
-    background-color: #25252d;
-    border: 1px solid #3a3a45;
-    border-radius: 4px;
-    padding: 8px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.compare-stat-box small {
-    font-size: 0.65rem;
-    color: #666;
-    text-transform: uppercase;
-}
-
-.vs-divider {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 900;
-    color: #ff4d4d;
-    font-size: 1rem;
-    padding: 0 5px;
-    margin-top: 25px;
-}
-
-.winner-stat {
-    border-color: #00ffcc;
-    box-shadow: 0 0 8px rgba(0, 255, 204, 0.2);
-}
-.winner-stat strong {
-    color: #00ffcc;
-}
-
 #comparison-result p {
     font-family: 'Orbitron', sans-serif;
     color: #cccccc;
     font-size: 0.95rem;
     text-align: center;
     margin-top: 15px;
-}
-
-.compare-stat-box strong {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.compare-stat-box small {
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 0.65rem;
-    color: #aaaaaa;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .flex-container {
@@ -335,60 +248,6 @@
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.05);
     padding: 2px;
-}
-
-.dashboard-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; 
-    gap: 25px;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-}
-
-.compare-stat-box {
-    background-color: #16161a !important;
-    border: 1px solid #2d2d35 !important;
-    border-radius: 6px !important;
-    padding: 10px !important;
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    margin-bottom: 8px !important;
-}
-
-.compare-stat-box strong {
-    font-family: 'Orbitron', sans-serif !important;
-    font-size: 1.3rem !important;
-    color: #e1e1e6 !important;
-    font-weight: 700 !important;
-}
-
-.compare-stat-box small {
-    font-family: 'Orbitron', sans-serif !important;
-    font-size: 0.7rem !important;
-    color: #88888e !important;
-    letter-spacing: 1px !important;
-    text-transform: uppercase !important;
-}
-
-.winner-stat {
-    border-color: #00ffcc !important;
-    box-shadow: 0 0 10px rgba(0, 255, 204, 0.25) !important;
-}
-.winner-stat strong {
-    color: #00ffcc !important;
-}
-
-.loser-stat {
-    border-color: #ff4d4d !important;
-}
-.loser-stat strong {
-    color: #ff4d4d !important;
 }
 
 .warning-message {
@@ -688,12 +547,6 @@
     margin-bottom: 18px;
 }
 
-.player-card,
-.weapon-comparison-card,
-.dps-calculator-card{
-    min-height:620px;
-}
-
 .supplybin-button {
     width: 180px;
     margin: 25px auto 0;
@@ -707,12 +560,6 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: all .25s ease;
-}
-
-.supplybin-button:hover {
-    background: #ff7a18;
-    color: #111;
-    transform: translateY(-2px);
 }
 
 .supplybin-button:hover {
@@ -748,4 +595,26 @@
 .stats-icon {
     width: 45px;
     height: 45px;
+}
+
+.player-stats-display {
+    display: none;
+    margin-top: 15px;
+}
+
+.banner-trackers {
+    margin-top: 10px;
+}
+
+.comparison-result,
+.calculator-result {
+    margin-top: 15px;
+}
+
+.comparison-placeholder,
+.calculator-placeholder {
+    color: #cccccc;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    text-align: center;
 }

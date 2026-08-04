@@ -139,16 +139,24 @@ function renderSeasonLaunchCard() {
     if (!countdownCard) return;
 
     countdownCard.innerHTML = `
-        <h2 style="color:#ffbc0d; font-family:'Orbitron';">
-            SEASON 30 IS LIVE
+        <h2 style="
+            color:#00ff9d;
+            font-family:'Orbitron',sans-serif;
+            letter-spacing:2px;
+            margin-bottom:18px;
+        ">
+            🟢 SEASON 30 IS LIVE
         </h2>
 
         <p style="
-            margin:20px 0;
-            color:white;
-            font-size:0.95rem;
+            color:#ffffff;
+            line-height:1.7;
+            margin-bottom:22px;
+            font-size:.92rem;
         ">
-            Welcome to the newest Apex Legends season.
+            Welcome to the newest Apex Legends season.<br>
+            Explore the latest weapon meta, ranked changes,
+            map rotation and balance updates.
         </p>
 
         <button
@@ -158,6 +166,16 @@ function renderSeasonLaunchCard() {
             READ PATCH NOTES
 
         </button>
+
+        <p style="
+            margin-top:18px;
+            color:#888;
+            font-size:.72rem;
+            letter-spacing:1px;
+            text-transform:uppercase;
+        ">
+            Apex//Analyzer is ready for Season 30
+        </p>
     `;
 }
 

@@ -1,47 +1,3 @@
-@media (max-width: 900px) {
-    .tier-section {
-        grid-template-columns: 1fr;
-    }
-
-    .tier-label {
-        padding-right: 0;
-        padding-bottom: 18px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-}
-
-@media (max-width: 600px) {
-    .tier-list-page {
-        width: 92%;
-        padding-top: 35px;
-    }
-
-    .tier-section {
-        padding: 16px;
-    }
-
-    .tier-letter {
-        flex-basis: 58px;
-        width: 58px;
-        height: 58px;
-        font-size: 1.7rem;
-    }
-
-    .tier-weapons {
-        grid-template-columns: 1fr;
-    }
-
-    .tier-weapon-rating {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .tier-weapon-stats {
-        flex-direction: column;
-    }
-}
-
 @media (max-width: 1024px) {
 
     .dashboard-grid{
@@ -58,6 +14,19 @@
         max-width:500px;
     }
 
+}
+
+@media (max-width: 900px) {
+    .tier-section {
+        grid-template-columns: 1fr;
+    }
+
+    .tier-label {
+        padding-right: 0;
+        padding-bottom: 18px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 }
 
 @media (max-width:768px){
@@ -100,36 +69,9 @@
         padding:14px 20px;
     }
 
-}
-
-@media (max-width:480px){
-
-    #logo{
-        font-size:2rem;
+    .player-card{
+        margin-top:20px;
     }
-
-    #main-title{
-        font-size:0.9rem;
-    }
-
-    .player-card,
-    .weapon-comparison-card,
-    .calculator-info-panel{
-        padding:20px 15px;
-        width:95%;
-        max-width:430px;
-        margin:0 auto;
-    }
-
-}
-
-.player-card{
-    margin-top:20px;
-    width:95%;
-    max-width:430px;
-}
-
-@media (max-width:768px){
 
     #main{
         padding:30px 15px 60px;
@@ -212,6 +154,56 @@
         padding-bottom:40px;
     }
 
+}
+
+@media (max-width: 600px) {
+    .tier-list-page {
+        width: 92%;
+        padding-top: 35px;
+    }
+
+    .tier-section {
+        padding: 16px;
+    }
+
+    .tier-letter {
+        flex-basis: 58px;
+        width: 58px;
+        height: 58px;
+        font-size: 1.7rem;
+    }
+
+    .tier-weapons {
+        grid-template-columns: 1fr;
+    }
+
+    .tier-weapon-rating {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tier-weapon-stats {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:480px){
+    #logo{
+        font-size:2rem;
+    }
+
+    #main-title{
+        font-size:0.9rem;
+    }
+
+    .player-card,
+    .weapon-comparison-card,
+    .calculator-info-panel{
+        width:95%;
+        max-width:430px;
+        margin:0 auto;
+        padding:20px 15px;
+    }
 }
 
 @media (max-width:440px){
