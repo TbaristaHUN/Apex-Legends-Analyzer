@@ -213,25 +213,6 @@ live-hub-container {
     text-decoration: underline;
 }
 
-#main {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
-}
-
-.live-hub-container {
-    display:flex;
-    justify-content:center;
-    align-items:stretch;
-    gap:28px;
-    width:95%;
-    max-width:1650px;
-    margin:40px auto;
-    flex-wrap:wrap;
-}
-
-
 .live-hub-container {
     display:flex;
     justify-content:center;

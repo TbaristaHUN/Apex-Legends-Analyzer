@@ -128,3 +128,122 @@
     width:95%;
     max-width:430px;
 }
+
+@media (max-width:768px){
+
+    #main{
+        padding:30px 15px 60px;
+        height:auto;
+        background-position:center top;
+    }
+
+    .live-hub-container{
+        width:100%;
+        margin:25px auto;
+        gap:20px;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .countdown-card,
+    .map-card,
+    .featured-weapon-card{
+        width:100%;
+        min-width:unset;
+        max-width:420px;
+        padding:22px 18px;
+    }
+
+    .featured-title{
+        font-size:2rem;
+        line-height:1.1;
+    }
+
+    .featured-name{
+        font-size:2.1rem;
+        line-height:1.2;
+    }
+
+    .featured-stars{
+        font-size:2rem;
+        letter-spacing:3px;
+    }
+
+    .featured-stat{
+        width:100%;
+        padding:10px 0;
+    }
+
+    .featured-stat span{
+        font-size:.8rem;
+    }
+
+    .featured-stat strong{
+        font-size:1rem;
+    }
+
+    .countdown-grid{
+        gap:12px;
+        flex-wrap:wrap;
+    }
+
+    .timer-number-red,
+    .timer-number-yellow{
+        font-size:2rem;
+    }
+
+    .live-info-banner{
+        padding:15px;
+        gap:12px;
+        justify-content:center;
+    }
+
+    .banner-divider{
+        display:none;
+    }
+
+    .banner-item{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+    }
+
+    footer{
+        padding-bottom:40px;
+    }
+
+}
+
+@media (max-width:440px){
+
+    #main{
+        padding:25px 12px 50px;
+    }
+
+    .featured-title{
+        font-size:1.7rem;
+    }
+
+    .featured-name{
+        font-size:1.8rem;
+    }
+
+    .featured-stars{
+        font-size:1.8rem;
+    }
+
+    .featured-tier{
+        font-size:1.2rem;
+    }
+
+    .timer-number-red,
+    .timer-number-yellow{
+        font-size:1.8rem;
+    }
+
+    .card-title-red,
+    .card-title-yellow{
+        font-size:1.5rem;
+    }
+
+}
