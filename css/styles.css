@@ -188,11 +188,11 @@ html {
 
 }
 
-#copyright {
-    border-top:1px solid rgba(255,255,255,.08);
-    padding-top:25px;
-    color:#88888e;
-    font-family:'Orbitron',sans-serif;
+#copyright{
     text-align:center;
-    font-size:.75rem;
+    color:#bcbcbc;
+    font-size:0.85rem;
+    line-height:1.7;
+    margin-top:30px;
+    padding:20px;
 }
