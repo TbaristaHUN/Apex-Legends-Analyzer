@@ -1,0 +1,6 @@
+-- Apex Legends Analyzer
+-- Season 30 weapon database update
+-- Date: 2026-08-10
+-- Weapon statistics (damage and magazine sizes)
+-- Were manually updated in the production Supabase database.
+-- This file documents the Season 30 database update.
