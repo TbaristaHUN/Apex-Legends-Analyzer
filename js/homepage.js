@@ -76,11 +76,10 @@ async function loadFeaturedWeapon() {
     }
 }
 
+const SEASON_32_LAUNCH = new Date("2027-02-09T19:00:00+01:00");
+
 function getHomepageMode() {
-
-    const launchDate = new Date(2026, 7, 4, 19, 0, 0);
-
-    if (new Date() < launchDate) {
+    if (new Date() < SEASON_32_LAUNCH) {
         return "countdown";
     }
 
@@ -96,7 +95,7 @@ function initCountdown() {
         return;
     }
 
-    const targetDate = new Date(2026, 7, 4, 19, 0, 0).getTime();
+    const targetDate = SEASON_32_LAUNCH.getTime();
 
     const updateTimer = () => {
         const now = new Date().getTime();
@@ -145,7 +144,7 @@ function renderSeasonLaunchCard() {
             letter-spacing:2px;
             margin-bottom:18px;
         ">
-            🟢 SEASON 30 IS LIVE
+            🟢 SEASON 31 IS LIVE
         </h2>
 
         <p style="
@@ -174,7 +173,7 @@ function renderSeasonLaunchCard() {
             letter-spacing:1px;
             text-transform:uppercase;
         ">
-            Apex//Analyzer is ready for Season 30
+            Apex//Analyzer is ready for Season 31. Check out the new features and updates.
         </p>
     `;
 }
